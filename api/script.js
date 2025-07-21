@@ -1,5 +1,4 @@
 import { MongoClient } from "mongodb";
-import fetch from "node-fetch";  // If your environment doesn’t have fetch, you may need this package
 
 const uri = process.env.MONGODB_URI;
 
@@ -18,7 +17,7 @@ export default async function handler(req, res) {
 
     const ip = req.headers["x-forwarded-for"]?.split(",")[0] || req.connection?.remoteAddress || "unknown";
 
-    // Query IP geolocation API
+    // Query IP geolocation API using global fetch
     let geo = {};
     if (ip && ip !== "unknown" && ip !== "::1" && ip !== "127.0.0.1") {
       const geoRes = await fetch(`http://ip-api.com/json/${ip}?fields=status,country,regionName,city,zip,lat,lon,timezone,isp,org,query`);
