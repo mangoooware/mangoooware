@@ -1,1 +1,4 @@
-test
+*.log
+other/
+
+textfiles/*.txt
