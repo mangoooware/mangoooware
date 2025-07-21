@@ -18,6 +18,7 @@
   "homepage": "https://github.com/mangoooware/mangoooware#readme",
   "description": "",
   "dependencies": {
-    "mongodb": "^6.17.0"
+    "mongodb": "^6.17.0",
+    "node-fetch": "^3.3.2"
   }
 }
