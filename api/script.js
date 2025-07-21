@@ -1,32 +1,36 @@
-import { MongoClient } from 'mongodb';
+import { MongoClient } from "mongodb";
 
+// Access the environment variable
 const uri = process.env.MONGODB_URI;
-const client = new MongoClient(uri);
 
 export default async function handler(req, res) {
-  const ip = req.headers['x-forwarded-for']?.split(',')[0] || req.connection.remoteAddress || 'unknown';
-  const time = new Date();
-
-  const logEntry = {
-    ip,
-    method: req.method,
-    url: req.url,
-    userAgent: req.headers['user-agent'],
-    timestamp: time,
-  };
+  if (req.method !== "GET") {
+    res.status(405).send("Method Not Allowed");
+    return;
+  }
 
   try {
-    await client.connect();
-    const db = client.db('logsDB');          // Database name — can be anything you want
-    const collection = db.collection('accessLogs');  // Collection name
+    const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-    await collection.insertOne(logEntry);
+    const db = client.db("logsDB");
+    const collection = db.collection("accessLogs");
 
-    await client.close();
+    const ip =
+      req.headers["x-forwarded-for"]?.split(",")[0] ||
+      req.connection?.remoteAddress ||
+      "unknown";
 
-    res.status(200).json({ status: 'logged' });
+    await collection.insertOne({
+      ip,
+      userAgent: req.headers["user-agent"],
+      timestamp: new Date(),
+    });
+
+    client.close();
+
+    res.status(200).json({ status: "logged" });
   } catch (error) {
-    console.error('MongoDB logging error:', error);
-    res.status(500).json({ error: 'Logging failed' });
+    console.error("Logging failed:", error);
+    res.status(500).json({ status: "error", error: error.message });
   }
 }
