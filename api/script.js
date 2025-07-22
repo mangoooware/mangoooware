@@ -25,19 +25,28 @@ export default async function handler(req, res) {
       if (geo.status !== "success") geo = {};
     }
 
-    await collection.insertOne({
-      ip,
-      geo,
-      userAgent: req.headers["user-agent"] || "unknown",
-      referrer: req.headers["referer"] || req.headers["referrer"] || "none",
-      acceptLanguage: req.headers["accept-language"] || "unknown",
-      cookies: req.headers["cookie"] || "",
-      headers: JSON.stringify(req.headers || {}),
-      method: req.method,
-      query: JSON.stringify(req.query || {}),
-      remotePort: req.connection?.remotePort || null,
-      timestamp: new Date(),
-    });
+await collection.insertOne({
+  ip,
+  geo_country: geo.country || null,
+  geo_region: geo.regionName || null,
+  geo_city: geo.city || null,
+  geo_zip: geo.zip || null,
+  geo_lat: geo.lat || null,
+  geo_lon: geo.lon || null,
+  geo_timezone: geo.timezone || null,
+  geo_isp: geo.isp || null,
+  geo_org: geo.org || null,
+  geo_query: geo.query || null,
+  userAgent: req.headers["user-agent"] || "unknown",
+  referrer: req.headers["referer"] || req.headers["referrer"] || "none",
+  acceptLanguage: req.headers["accept-language"] || "unknown",
+  cookies: req.headers["cookie"] || "",
+  headers: JSON.stringify(req.headers || {}),
+  method: req.method,
+  query: JSON.stringify(req.query || {}),
+  remotePort: req.connection?.remotePort || null,
+  timestamp: new Date(),
+});
 
     res.status(200).json({ status: "logged", geo });
   } catch (error) {
