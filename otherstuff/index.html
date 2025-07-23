@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Random Onion Link</title>
+  <meta charset="UTF-8">
+  <title>Random Onion Link Viewer</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 2em; }
+    button { font-size: 1.5em; padding: 0.5em 1em; }
+    #linkBox { margin-top: 2em; font-size: 1.2em; }
+  </style>
 </head>
 <body>
-  <h1>Click to Open Random Onion Link</h1>
-  <button id="next">Open Random Link</button>
-  <p id="currentLink"></p>
+  <h1>Onion Link Explorer</h1>
+  <button onclick="nextLink()">Get Next Link</button>
+  <div id="linkBox"></div>
 
-  <script src="script.js"></script>
+  <script>
+    let links = [];
+    let used = JSON.parse(localStorage.getItem('visitedLinks') || '[]');
+
+    fetch('onion_links.txt')
+      .then(response => response.text())
+      .then(text => {
+        links = text.trim().split('\n').filter(link => !used.includes(link));
+      });
+
+    function nextLink() {
+      if (links.length === 0) {
+        document.getElementById('linkBox').innerText = 'No more links left!';
+        return;
+      }
+
+      const index = Math.floor(Math.random() * links.length);
+      const link = links.splice(index, 1)[0];
+      used.push(link);
+      localStorage.setItem('visitedLinks', JSON.stringify(used));
+
+      document.getElementById('linkBox').innerHTML =
+        `<a href="${link}" target="_blank" rel="noopener noreferrer">${link}</a>`;
+    }
+  </script>
 </body>
 </html>
