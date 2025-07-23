@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Random Onion Link</title>
   <style>
     body {
@@ -28,37 +28,40 @@
     let links = [];
     let visited = new Set();
 
-    async function fetchLinks() {
-      try {
-        const response = await fetch('onion_links.txt');
-        const text = await response.text();
-        links = text.split('\n').map(l => l.trim()).filter(Boolean);
-      } catch (err) {
-        document.getElementById("link").textContent = "Failed to load links.";
-        console.error("Fetch error:", err);
-      }
-    }
+    // Fetch the onion links from the text file
+    fetch('onion_links.txt')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text();
+      })
+      .then(data => {
+        links = data.split('\n').map(line => line.trim()).filter(Boolean);
+      })
+      .catch(error => {
+        document.getElementById('link').textContent = 'Failed to load links: ' + error.message;
+        console.error('Fetch error:', error);
+      });
 
     function getRandomLink() {
       const remaining = links.filter(link => !visited.has(link));
       if (remaining.length === 0) {
         return null;
       }
-      const randIndex = Math.floor(Math.random() * remaining.length);
-      return remaining[randIndex];
+      const index = Math.floor(Math.random() * remaining.length);
+      return remaining[index];
     }
 
-    document.getElementById("nextBtn").addEventListener("click", () => {
+    document.getElementById('nextBtn').addEventListener('click', () => {
       const link = getRandomLink();
       if (link) {
         visited.add(link);
-        document.getElementById("link").innerHTML = `<a href="${link}" target="_blank">${link}</a>`;
+        document.getElementById('link').innerHTML = `<a href="${link}" target="_blank" rel="noopener noreferrer">${link}</a>`;
       } else {
-        document.getElementById("link").textContent = "No more links!";
+        document.getElementById('link').textContent = 'No more links!';
       }
     });
-
-    fetchLinks();
   </script>
 </body>
 </html>
