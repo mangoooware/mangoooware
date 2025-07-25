@@ -42,24 +42,24 @@ function revealLines(lines, callback) {
   }, 200);
 }
 
-function addGeolocation() {
-  navigator.geolocation.getCurrentPosition(
-    pos => {
-      const { latitude, longitude, accuracy } = pos.coords;
-      const geoText = `Geolocation: ${latitude.toFixed(5)}, ${longitude.toFixed(5)} (±${accuracy}m)`;
-      infoBox.lastChild.textContent = geoText;
-    },
-    err => {
-      infoBox.lastChild.textContent = `Geolocation: Permission denied or unavailable.`;
-    }
-  );
+function addGeolocationViaAPI() {
+  fetch('https://ip-api.com/json/')
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === "success") {
+        const geoText = `Geolocation (IP-based): ${data.lat.toFixed(5)}, ${data.lon.toFixed(5)} | ${data.city}, ${data.regionName}, ${data.country}`;
+        infoBox.lastChild.textContent = geoText;
+      } else {
+        infoBox.lastChild.textContent = "Geolocation API error: " + data.message;
+      }
+    })
+    .catch(err => {
+      infoBox.lastChild.textContent = "Geolocation API request failed.";
+      console.error(err);
+    });
 }
 
 // Start immediately
 revealLines(infoLines, () => {
-  if ('geolocation' in navigator) {
-    addGeolocation();
-  } else {
-    infoBox.lastChild.textContent = "Geolocation: Not supported by browser.";
-  }
+  addGeolocationViaAPI();
 });
