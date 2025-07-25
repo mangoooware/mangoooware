@@ -1,55 +1,22 @@
-header {
-outline-style: solid;
-border-radius: 25px;
-outline-width: 2px;
-outline-color: rgb(247, 242, 242);
-padding: 5px;
-background-color: rgb(247, 244, 244);
+
+.mainpagetext {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin: 25px;
+  font-style: italic;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
+.mainpagetext2 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin: 25px;
+  font-style: italic;
+  font-size: large;
 }
 
-.headertext {
-font-family:Arial, Helvetica, sans-serif;
-min-width: 15px;
-display: inline-flex;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.icon1 {
-  display: flex;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-
-}
-
-.outline-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* center everything horizontally */
-    padding: 10px;
-}
-
-.top-row {
-  display: flex;
-  justify-content: center;    
-  width: 100%;
-}
-
-.text3,
-.picture1 {
-  width: 100%;
-}
-
-.picture1 {
-  max-width: 1000px;
-  min-width: 500px;
-  margin-top: 50px;
+.hrefs {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .text {
@@ -69,90 +36,10 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 1px 5px;
 }
 
-.text3 {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  margin: 10px 10px;
-}
-
-.payment-option {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-
-.box {
-  outline-style: solid;
-  border-radius: 15px;
-  outline-color: rgb(247, 242, 242);
-  background-color: rgb(247, 244, 244);
-  width: 25%;
-  margin: 10px 10px;
-}
-
-.boxtexttop {
-  display: flex;
-  justify-content: center;    
-  width: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: bold;
-}
-
-.paymenttext {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: bold;
-  margin: 30px 10px;
-}
-
-.purchasebutton {
-  padding: 8px 8px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
-  justify-content: center;    
-  outline-style: solid;
-  border-radius: 15px;
-  outline-color: rgb(247, 242, 242);
-  background-color: rgb(196, 190, 190);
-}
-
-.purchasetext {
-  color: black;
-}
-
-.safety {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 100px;
-}
-
-.option {
-  outline-style: solid;
-  border-radius: 5px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  outline-color: rgb(247, 242, 242);
-  background-color: rgb(247, 244, 244);
-  display: flex;
-  width: 50%;
-  margin: 10px;
-  padding: 10px;
-}
-
-.line {
-  outline-style: solid;
-  outline-width: 2px;
-  outline-color: rgba(190, 182, 182, 0.308);
-}
-
-.text4 {
-  padding-top: 10px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.purchasepage {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
+.outline {
+  border: 2px solid black; 
+  padding: 15px;           
+  margin: 20px;            
+  border-radius: 8px;     
+  background-color: white; 
 }

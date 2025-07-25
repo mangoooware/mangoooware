@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>Random Onion Link</title>
+  <title>Onion roulette</title>
   <style>
     body {
       font-family: sans-serif;
@@ -29,7 +29,7 @@
     let visited = new Set();
 
     // Fetch the onion links from the text file
-    fetch('https://www.mangoooware.xyz/otherstuff/onion_links.txt')
+    fetch('https://www.mangoooware.xyz/modules/onion_links.txt')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

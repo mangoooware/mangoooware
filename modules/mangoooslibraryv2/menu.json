@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Index",
+    "path": "content/index/index.html",
+    "children": [
+      {
+        "title": "SubCat TEMP",
+        "path": "content/index/SubCat/index.html",
+        "children": [
+          {
+            "title": "SubCat2 TEMP",
+            "path": "content/index/SubCat/SubCat2/index.html"
+          }
+        ]
+      }
+    ]
+  },
+  
+  {
+    "title": "Finance",
+    "path": "content/Finance/index.html",
+    "children": [
+      {
+       "title": "Accounting",
+       "path": "content/Finance/Accounting/index.html"
+      },
+      
+      {
+       "title": "Crypto",
+       "path": "content/Finance/Crypto/index.html"
+      },
+      
+      {
+       "title": "Stocks",
+       "path": "content/Finance/Stocks/index.html"
+      },
+
+      {
+       "title": "Economics",
+       "path": "content/Finance/Economics/index.html"
+      }
+    ]
+  },
+
+  {
+    "title": "Mathematics",
+    "path": "content/Mathematics/index.html",
+    "children": [
+      {
+       "title": "Calculus",
+       "path": "content/Mathematics/Calculus/index.html"
+      },
+
+      {
+       "title": "Linear algebra",
+       "path": "content/Mathematics/Linear algebra/index.html"
+      },
+
+      {
+       "title": "Quantum mechanics",
+       "path": "content/Finance/Quantum mechanics/index.html"
+      }
+    ]
+  },
+
+  {
+    "title": "Science",
+    "path": "content/Science/index.html",
+    "children": [
+      {
+       "title": "Biology",
+       "path": "content/Science/Biology/index.html"
+      },
+      
+      {
+       "title": "Chemistry",
+       "path": "content/Science/Chemistry/index.html"
+      }
+    ]
+  },
+  
+  {
+    "title": "Miscellaneous",
+    "path": "content/Miscellaneous/index.html",
+    "children": [
+      {
+       "title": "3D",
+       "path": "content/Miscellaneous/3D/index.html"
+      }
+    ]
+  }
+]
