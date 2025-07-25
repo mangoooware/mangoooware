@@ -2,6 +2,7 @@ const infoBox = document.getElementById("info");
 
 const infoLines = [
   `User Agent: ${navigator.userAgent}`,
+  "Geolocation: (fetching location info...)",  // Moved here right after User Agent
   `Platform: ${navigator.platform}`,
   `Language: ${navigator.language}`,
   `Online: ${navigator.onLine}`,
@@ -25,8 +26,7 @@ if (navigator.plugins.length > 0) {
   infoLines.push(`Plugins: None`);
 }
 
-// Geolocation placeholder
-infoLines.push("Geolocation: (fetching location info...)");
+let geoDivIndex = 1; // since we placed geolocation at index 1
 
 function revealLines(lines, callback) {
   let index = 0;
@@ -48,11 +48,11 @@ async function addGeolocationViaAPI() {
     const data = await res.json();
 
     if (data.success === false) {
-      infoBox.lastChild.textContent = "Geolocation API error: " + data.message;
+      infoBox.children[geoDivIndex].textContent = "Geolocation API error: " + data.message;
       return;
     }
 
-    infoBox.lastChild.textContent =
+    infoBox.children[geoDivIndex].textContent =
       `Geolocation (ipwhois.app):\n` +
       `IP: ${data.ip}\n` +
       `Location: ${data.city}, ${data.region}, ${data.country}\n` +
@@ -61,12 +61,11 @@ async function addGeolocationViaAPI() {
       `ISP: ${data.isp}\n` +
       `Organization: ${data.org}`;
   } catch (err) {
-    infoBox.lastChild.textContent = "Geolocation API request failed.";
+    infoBox.children[geoDivIndex].textContent = "Geolocation API request failed.";
     console.error(err);
   }
 }
 
-// Start revealing info and then fetch geolocation
 revealLines(infoLines, () => {
   addGeolocationViaAPI();
 });
