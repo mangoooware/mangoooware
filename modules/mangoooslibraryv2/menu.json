@@ -1,15 +1,15 @@
 [
   {
     "title": "Index",
-    "path": "content/index/index.html",
+    "path": "content/Index/index.html",
     "children": [
       {
         "title": "SubCat TEMP",
-        "path": "content/index/SubCat/index.html",
+        "path": "content/Index/SubCat/index.html",
         "children": [
           {
             "title": "SubCat2 TEMP",
-            "path": "content/index/SubCat/SubCat2/index.html"
+            "path": "content/Index/SubCat/SubCat2/index.html"
           }
         ]
       }

@@ -1,0 +1,66 @@
+body {
+  background-color: #c4c2c2; 
+}
+.mainpagetext {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin: 25px;
+  font-style: italic;
+  color: rgb(0, 0, 0);
+}
+
+.mainpagetext2 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin: 25px;
+  font-style: italic;
+  font-size: large;
+}
+
+.hrefs {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 1px 5px;
+  color: rgba(0, 0, 0, 0.603);
+}
+
+.text2 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: red;
+  padding: 1px 5px;
+}
+
+.page {
+  border: 2px solid black; 
+  padding: 15px;           
+  margin: 20px;            
+  border-radius: 8px;     
+  background-color: rgb(0, 0, 0); 
+}
+
+.outline {
+    max-width: 3000px;
+    margin: 50px;
+    margin-left: 15%;
+    margin-right: 15%;
+    min-width: 300px;
+    padding: 40px;
+    background-color: rgba(211, 211, 211, 0.9); /* white with slight transparency */
+    border-radius: 25px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.outline:hover {
+  background-color: rgb(173, 173, 173);
+} 
+
