@@ -1,5 +1,5 @@
 body {
-  background-color: #c4c2c2; 
+  background-color: #e2e1e1; 
 }
 .mainpagetext {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -55,12 +55,12 @@ body {
     margin-right: 15%;
     min-width: 300px;
     padding: 40px;
-    background-color: rgba(211, 211, 211, 0.9); /* white with slight transparency */
+    background-color: rgba(230, 229, 229, 0.9); /* white with slight transparency */
     border-radius: 25px;
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
 .outline:hover {
-  background-color: rgb(173, 173, 173);
+  background-color: rgb(190, 190, 190);
 } 
 
