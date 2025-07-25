@@ -16,7 +16,7 @@ body, html {
 #container {
   position: relative;
   width: 800px;
-  height: 1000px;
+  height: 1100px;
   /* Remove flex here to avoid layout issues */
   /* display: flex; */
   /* justify-content: center; */
