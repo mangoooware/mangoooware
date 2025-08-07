@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Info Snapshot</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+    }
+    #screenshot-area {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+    #background-img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    #info {
+      position: relative;
+      z-index: 1;
+      color: white;
+      padding: 40px;
+      font-size: 1.5em;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+    #downloadBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 10;
+      padding: 10px 20px;
+      background: #222;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="screenshot-area">
+    <img id="background-img" src="your-background.jpg" alt="Background Image">
+    <div id="info">
+      <p><strong>User-Agent:</strong> <span id="user-agent"></span></p>
+      <p><strong>Geolocation:</strong> <span id="geo"></span></p>
+    </div>
+  </div>
+
+  <button id="downloadBtn">Download Snapshot</button>
+
+  <script>
+    document.getElementById("user-agent").textContent = navigator.userAgent;
+
+    fetch("https://ipapi.co/json/")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("geo").textContent =
+          `${data.city}, ${data.region}, ${data.country_name} (${data.ip})`;
+      })
+      .catch(err => {
+        document.getElementById("geo").textContent = "Location unavailable";
+        console.error("Geo error:", err);
+      });
+
+    document.getElementById("downloadBtn").addEventListener("click", () => {
+      html2canvas(document.getElementById("screenshot-area"), {
+        useCORS: true
+      }).then(canvas => {
+        const link = document.createElement("a");
+        link.download = "snapshot.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      });
+    });
+  </script>
+</body>
+</html>
