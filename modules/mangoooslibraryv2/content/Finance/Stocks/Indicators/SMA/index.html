@@ -2,27 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MathJax Test</title>
+  <title>SMA</title>
   <script src="C:\Users\Gebruiker\Documents\mangooowareLIVE\modules\mangoooslibraryv2\script.js"></script>
 </head>
 <body>
   <div class="page">
   <h1>SMA</h1>
   SMA (Simple Moving Average) calculates the moving average of a stock on your chosen timeframe. This is called a period. 
-  <h1>Calculating SMA</h1>
   
-  <h2>1. We will choose a 5 day SMA meaning you will need to get the last 5 days + todays stock price:</h2>
- We need 6 days worth of closing prices on our stock like this:
+  <h2>1. SMA Time period</h2>
+ We will choose a 5-period SMA meaning we will need to get the last 5 days + todays stock price:
 
 <div class="chart-container">
   <canvas id="priceChart"></canvas>
    <i>Do not add todays price into SMA. Yesterday is last.</i>
 </div>
 
-  <br><h2>2. The SMA formula goes as followed:<br><br></h2>
-  Add the closing prices together and devide them by the number of days. In our case that would be:<br><br>
+<h2>2. SMA formula</h2>
+Add the closing prices together and devide them by the number of days. In our case that would be:<br><br>
 
-  <div class="inline-math-box">
+<div class="ema-formula-group">
+<br><br>
+<div class="inline-math-box">
 \[
 \text{SMA} = \frac{A_1 + A_2 + \cdots + A_n}{n}
 \]
@@ -45,7 +46,8 @@ n = \text{the number of total days/periods}
 \]
 </div>
 
-<br><br><b> This means our SMA is 22.8</b>
+<br><br><b> This means our SMA = 22.8</b><br><br>
+</div>
 <br><br> We now know that our stock moves at an average of 22.8 in the past 5 days.
 
 <br><br><br>

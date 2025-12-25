@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MACD</title>
+  <script src="C:\Users\Gebruiker\Documents\mangooowareLIVE\modules\mangoooslibraryv2\script.js"></script>
+</head>
+<body>
+  <div class="page">
+    <h1>MACD</h1>
+    MACD is used to see if short time (12 days/period) has been doing better or worse than the long time 
+    (26 days/period). These are called <b>12-period EMA</b> and <b>26-period EMA.</b> With these you can see
+    if momentum is building (trend strengthening) or fading (possible reversal).
+
+    <br><br>
+    To calculate MACD you need the 12 and 26-period <a href="#" data-path="/modules/mangoooslibraryv2/content/Finance/Stocks/Indicators/EMA/index.html">EMA</a> 
+    of your chosen stock. With those numbers you can calculate MACD
+
+    <h1>The MACD formula</h1>
+    The MACD formula exists out of 3 main factors, The <b>MACD line</b>, <b>Signal line</b> and <b>histogram</b>.
+    for MACD, you only need the MACD line. The rest is to calculate the average of MACD over 
+    future time.
+    <br><br>
+
+    <div class="ema-formula-group">
+      <br><br>
+    <div class="inline-math-box">
+    
+
+\[ \text{MACD Line} = \text{EMA}_{12}(P) - \text{EMA}_{26}(P) \]
+
+
+\[ \text{Signal Line} = \text{EMA}_{9}(\text{MACD Line}) \]
+
+
+\[ \text{Histogram} = \text{MACD Line} - \text{Signal Line} \]
+
+<b>where:</b> <br><br>
+- \( \text{EMA}_{12}(P) \) is the 12-period EMA of the price \( P \), <br><br>
+- \( \text{EMA}_{26}(P) \) is the 26-period EMA of the price \( P \), <br><br>
+- \( \text{EMA}_{9}(\text{MACD Line}) \) is the 9-period EMA of the MACD Line itself (this is the Signal Line).
+
+</div>
+
+<br><br><br>
+</div>
+    
+    <br><br>
+    <h2>1. MACD line</h2>
+    We will use a random EMA value to use as an example.
+    <br><br>
+
+    <div class="ema-formula-group">
+      <br>
+
+      <b>EMA(12) yesterday = 23.60</b>
+      <br>
+      <b>EMA(26) yesterday = 22.90</b>
+
+      <br><br>
+
+      With this we can calculate the MACD line
+
+      <br><br>
+
+      <div class="inline-math-box">
+
+        \[ \text{MACD Line} = \text{EMA}_{12}(P) - \text{EMA}_{26}(P) \]
+        \[ \text{MACD Line} = \text{23.60} - \text{22.90} = \text{0.70} \]
+      
+    </div>
+
+      <br><br>
+      <h3>Our MACD line is 0.70</h3>
+      A positive MACD line tells us that short-term EMA is better than long-term EMA indicating a bullish trend. This is basically everything you need to know about 
+      MACD, but if you want to do the extra steps you can calculate the average of the MACD values.
+      <br><br>
+    </div>
+
+    <br><br>
+    <h2>2. SMA on MACD</h2>
+    For the signal line we will need 9 values of MACD. Since you're calculating the MACD average, you are
+    not required to do exactly 9 values because you keep adding them per day (thus, you don't seed the MACD like with SMA). 
+
+    <br><br>
+
+    <div class="ema-formula-group">
+      <br>
+      To calculate the signal line we will need MACD values. As example we'll use random MACD value 
+      of a 9-period timeframe. Since we're using the SMA formula, we will be adding them together and 
+      deviding them by their amount:
+
+      <br><br>
+      
+      <div class="inline-math-box">
+      $ \text{Signal Line}_9 = \frac{0.25 + 0.32 + 0.38 + 0.42 + 0.45 + 0.47 + 0.48 + 0.48 + 0.48}{9} = 0.4167 $
+      </div>
+
+      <br><br>
+
+      </div>
+
+    <br><br>
+    <h2>3. Mutliplier </h2>
+    We calculated SMA on MACD. With that we can now move on to calculate the EMA multiplier.<br><br>
+  <div class="ema-formula-group">
+    <br><br>
+    <div class="inline-math-box">
+
+    \[ \alpha = \frac{2}{N + 1} \]<br><br>
+
+    <b>where:</b> <br><br>
+    - \( \alpha \) is the EMA multiplier (smoothing factor),<br><br>
+    - \( N \) is the number of days/periods in the EMA (e.g., 5 for a 5-period EMA).<br><br>
+    </div>
+
+    <br><br>
+
+     Filling out the formula: <br><br>
+    
+    <div class="inline-math-box">
+    \[ \alpha = \frac{2}{9 + 1} = 0.2 \]
+    </div>
+    
+    <br><br>
+    <h3>Our multiplier is 0.2</h3>
+
+    <br>
+
+    </div>
+    
+     <br><br>
+     <h2>4. First part of the signal line equation</h2>
+      With the multiplier we can finish the first part of the equation <br><br>
+      <div class="ema-formula-group">
+        <br><br>
+        
+        The full equation of the signal line is:<br><br>
+        <div class="inline-math-box">
+         $ \text{Signal}_t = \alpha \cdot \text{MACD}_t + (1 - \alpha)\cdot \text{Signal}_{t-1} $ <br><br>
+        </div>
+
+        <br><br>
+        We can break this up in 2 parts:
+
+        <br><br>
+
+        <div class="inline-math-box">
+      $ \text{Signal Line}_t = \alpha \cdot (\text{MACD Line})_t  $
+     </div>
+
+     <br><br>
+
+     Or simply said:
+
+     <br><br>
+      
+      <div class="inline-math-box">
+      $ \text{Signal Line}_t = \text{Multiplier} \cdot (\text{Today's MACD value})_t $ <br><br>
+      $ \text{Signal Line}_t = \text{0.2} \cdot (\text{0.50})_9 = 0.1 $
+      </div>
+      <br><br>
+      <h3>The first part of the equation = 0.1</h3>
+      <br>
+    </div>
+  
+    <br><br>
+    <h2>5. Second part of the signal line equation </h2>
+    Now solve the second part of the signal line equation
+    <br><br>
+    <div class="ema-formula-group">
+    
+    <br><br>
+    
+    <div class="inline-math-box">
+
+      $ \text{Signal Line}_t = (1 - Multiplier) \cdot (\text{Signal Line})_{t-1} $  <br><br>
+      $ \text{Signal Line}_t = (1 - 0.2) \cdot (\text{0.1})_{t-1} $ <br><br>
+      $ \text{Signal Line}_t = (0.8) \cdot (\text{0.1})_{t-1} = 0.08 $
+    </div>
+    <br><br>
+    <h3>The second part of the equation = 0.08</h3>
+    
+    <br>
+    </div>
+    <br><br>
+    
+    <h2>6. Finalize equation</h2>
+    To solve the equation we must put the numbers together that we calculated previously
+    <br><br>
+    <div class="ema-formula-group">
+    
+    <br>
+    <h3>The signal line equation:</h3>
+    <div class="inline-math-box">
+      $ \text{Signal}_t = \alpha \cdot \text{MACD}_t + (1 - \alpha)\cdot \text{Signal}_{t-1} $ <br><br>
+      </div>
+      
+      <br><br>Or simpler: <br><br>
+      <div class="inline-math-box">
+      $ \text{Signal Line}_t = \text{Multiplier} \cdot (\text{Today's MACD value})_t + (1 - \text{Multiplier}) \cdot (\text{Signal Line})_{t-1} $ <br><br>
+      </div>
+      
+      <br><br>
+      Adding our previous calculated numbers of the equation would be: <br><br>
+      <div class="inline-math-box">
+      $ \text{Signal Line}_t = \text{0.2} \cdot \text{0.50} + \text{0.8} \cdot \text{0.08}_{t-1}  $ <br><br>
+      </div> 
+
+      <br><br><b>Our final answer would be: </b><br><br>
+      <div class="inline-math-box">
+      $ \text{Signal Line}_t = \text{0.1}  + \text{0.064}_{t-1} = 0.164  $ 
+      </div>
+      
+      <br><br>
+      <h3>Our signal line = 0.164</h3>
+
+    
+    <br>
+    </div>
+    
+    <br><br>
+    <h2>7. Histogram</h2>
+    Now with the signal line, we can do the histogram by doing the following.
+    <br><br>  
+    <div class="ema-formula-group">
+    
+      <br><br>
+
+      <div class="inline-math-box">
+        $ \text{Histogram}_t = \text{MACD}_t - \text{Signal Line}_t $ <br><br>
+        $ \text{Histogram}_t = 0.50 - 0.164 = 0.336 $
+    </div>
+
+    <br><br>
+    <h3>The histogram = 0.336</h3>
+    
+
+  
+  <br>
+  </div>
+  <br><br>
+
+    <h3>With the histogram we can tell:</h3>
+    Positive histogram → MACD is above its signal line → short-term momentum is stronger than the EMA of MACD → bullish tilt.<br>
+    Negative histogram → MACD is below its signal line → short-term momentum is weaker than the EMA of MACD → bearish tilt.<br><br>
+  
+  </div>
+</body>
