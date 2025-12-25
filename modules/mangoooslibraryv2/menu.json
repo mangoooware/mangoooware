@@ -15,77 +15,87 @@
       }
     ]
   },
-  
   {
     "title": "Finance",
     "path": "content/Finance/index.html",
     "children": [
       {
-       "title": "Accounting",
-       "path": "content/Finance/Accounting/index.html"
+        "title": "Accounting",
+        "path": "content/Finance/Accounting/index.html"
       },
-      
       {
-       "title": "Crypto",
-       "path": "content/Finance/Crypto/index.html"
+        "title": "Crypto",
+        "path": "content/Finance/Crypto/index.html"
       },
-      
       {
-       "title": "Stocks",
-       "path": "content/Finance/Stocks/index.html"
+        "title": "Stocks",
+        "path": "content/Finance/Stocks/index.html",
+        "children": [
+          {
+            "title": "Indicators",
+            "path": "content/Finance/Stocks/Indicators/index.html",
+            "children": [
+              {
+                "title": "SMA",
+                "path": "content/Finance/Stocks/Indicators/SMA/index.html"
+              },
+              {
+                "title": "EMA",
+                "path": "content/Finance/Stocks/Indicators/EMA/index.html"
+              },
+              {
+                "title": "MACD",
+                "path": "content/Finance/Stocks/Indicators/MACD/index.html"
+              }
+            ]
+          }
+        ]
       },
-
       {
-       "title": "Economics",
-       "path": "content/Finance/Economics/index.html"
+        "title": "Economics",
+        "path": "content/Finance/Economics/index.html"
       }
     ]
   },
-
   {
     "title": "Mathematics",
     "path": "content/Mathematics/index.html",
     "children": [
       {
-       "title": "Calculus",
-       "path": "content/Mathematics/Calculus/index.html"
+        "title": "Calculus",
+        "path": "content/Mathematics/Calculus/index.html"
       },
-
       {
-       "title": "Linear algebra",
-       "path": "content/Mathematics/Linear algebra/index.html"
+        "title": "Linear algebra",
+        "path": "content/Mathematics/Linear algebra/index.html"
       },
-
       {
-       "title": "Quantum mechanics",
-       "path": "content/Finance/Quantum mechanics/index.html"
+        "title": "Quantum mechanics",
+        "path": "content/Mathematics/Quantum mechanics/index.html"
       }
     ]
   },
-
   {
     "title": "Science",
     "path": "content/Science/index.html",
     "children": [
       {
-       "title": "Biology",
-       "path": "content/Science/Biology/index.html"
+        "title": "Biology",
+        "path": "content/Science/Biology/index.html"
       },
-      
       {
-       "title": "Chemistry",
-       "path": "content/Science/Chemistry/index.html"
+        "title": "Chemistry",
+        "path": "content/Science/Chemistry/index.html"
       }
     ]
   },
-  
   {
     "title": "Miscellaneous",
     "path": "content/Miscellaneous/index.html",
     "children": [
       {
-       "title": "3D",
-       "path": "content/Miscellaneous/3D/index.html"
+        "title": "3D",
+        "path": "content/Miscellaneous/3D/index.html"
       }
     ]
   }
