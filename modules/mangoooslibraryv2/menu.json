@@ -1,6 +1,6 @@
 [
   {
-    "title": "Index",
+    "title": "Index *",
     "path": "content/Index/index.html",
     "children": [
       {
@@ -16,7 +16,7 @@
     ]
   },
   {
-    "title": "Finance",
+    "title": "Finance *",
     "path": "content/Finance/index.html",
     "children": [
       {
@@ -28,24 +28,94 @@
         "path": "content/Finance/Crypto/index.html"
       },
       {
-        "title": "Stocks",
+        "title": "Stocks *",
         "path": "content/Finance/Stocks/index.html",
         "children": [
           {
-            "title": "Indicators",
+            "title": "Indicator *",
             "path": "content/Finance/Stocks/Indicators/index.html",
             "children": [
               {
-                "title": "SMA",
-                "path": "content/Finance/Stocks/Indicators/SMA/index.html"
+                "title": "Trend indicators *",
+                "path": "content/Finance/Stocks/Indicators/Trend indicators/index.html",
+                "children": [
+                  {
+                    "title": "SMA *",
+                    "path": "content/Finance/Stocks/Indicators/Trend indicators/SMA/index.html"
+                  },
+                  {
+                    "title": "EMA *",
+                    "path": "content/Finance/Stocks/Indicators/Trend indicators/EMA/index.html"
+                  },
+                  {
+                    "title": "MACD *",
+                    "path": "content/Finance/Stocks/Indicators/Trend indicators/MACD/index.html"
+                  },
+                  {
+                    "title": "ADX",
+                    "path": "content/Finance/Stocks/Indicators/Trend indicators/ADX/index.html"
+                  },
+                  {
+                    "title": "SAR",
+                    "path": "content/Finance/Stocks/Indicators/Trend indicators/SAR/index.html"
+                  },
+                  {
+                    "title": "BB",
+                    "path": "content/Finance/Stocks/Indicators/Trend indicators/BB/index.html"
+                  },
+                  {
+                    "title": "IC",
+                    "path": "content/Finance/Stocks/Indicators/Trend indicators/IC/index.html"
+                  },
+                  {
+                    "title": "HMA",
+                    "path": "content/Finance/Stocks/Indicators/Trend indicators/HMA/index.html"
+                  },
+                  {
+                    "title": "STI",
+                    "path": "content/Finance/Stocks/Indicators/Trend indicators/STI/index.html"
+                  },
+                  {
+                    "title": "DC",
+                    "path": "content/Finance/Stocks/Indicators/Trend indicators/DC/index.html"
+                  }
+                ]
               },
               {
-                "title": "EMA",
-                "path": "content/Finance/Stocks/Indicators/EMA/index.html"
+                "title": "Momentum Indicators",
+                "path": "content/Finance/Stocks/Indicators/Momentum Indicators/index.html"
               },
               {
-                "title": "MACD",
-                "path": "content/Finance/Stocks/Indicators/MACD/index.html"
+                "title": "Volatility Indicators",
+                "path": "content/Finance/Stocks/Indicators/Volatility Indicators/index.html"
+              },
+              {
+                "title": "Volume Indicators",
+                "path": "content/Finance/Stocks/Indicators/Volume Indicators/index.html"
+              },
+              {
+                "title": "Oscillators",
+                "path": "content/Finance/Stocks/Indicators/Oscillators/index.html"
+              },
+              {
+                "title": "Support & Resistance",
+                "path": "content/Finance/Stocks/Indicators/Support & Resistance/index.html"
+              },
+              {
+                "title": "Breadth Indicators",
+                "path": "content/Finance/Stocks/Indicators/Breadth Indicators/index.html"
+              },
+              {
+                "title": "Sentiment Indicators",
+                "path": "content/Finance/Stocks/Indicators/Sentiment Indicators/index.html"
+              },
+              {
+                "title": "Statistical or Quant Indicators",
+                "path": "content/Finance/Stocks/Indicators/Statistical or Quant Indicators/index.html"
+              },
+              {
+                "title": "Hybrid or Composite Indicators",
+                "path": "content/Finance/Stocks/Indicators/Hybrid or Composite Indicators/index.html"
               }
             ]
           }

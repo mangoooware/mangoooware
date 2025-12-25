@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: sans-serif;
+  font-size: 20px;
   display: flex;
   height: 100vh;
   background-image: url(https://files.catbox.moe/mo1l07.png);
