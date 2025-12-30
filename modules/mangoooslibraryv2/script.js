@@ -74,6 +74,7 @@ const TITLE_MARKERS = [
   { marker: '[-]', className: 'hastag', display: '‣' },
   { marker: '[-+]', className: 'dash2', display: '·' },
   { marker: '[NEW]', className: 'new', display: 'NEW' },
+  { marker: '[UPDATE]', className: 'updatecat', display: '✉' },
   { marker: '[C]', className: 'custom', wholeRemaining: true },
   { marker: '[S]', className: 'space', display: ' |' }
 ];
