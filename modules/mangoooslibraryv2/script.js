@@ -71,8 +71,11 @@ function buildTree(items) {
 
 const TITLE_MARKERS = [
   { marker: '[i]', className: 'info', display: 'i' },
-  { marker: '[-]', className: 'warn', display: '-' },
-  { marker: '[NEW]', className: 'new', display: 'NEW' }
+  { marker: '[-]', className: 'hastag', display: '‣' },
+  { marker: '[-+]', className: 'dash2', display: '·' },
+  { marker: '[NEW]', className: 'new', display: 'NEW' },
+  { marker: '[C]', className: 'custom', wholeRemaining: true },
+  { marker: '[S]', className: 'space', display: ' |' }
 ];
 
 function formatTitle(title) {
@@ -84,25 +87,30 @@ function formatTitle(title) {
 
     for (const m of TITLE_MARKERS) {
       if (remaining.startsWith(m.marker)) {
-        result += `<span class="${m.className}">${m.display}</span> `;
-        remaining = remaining.slice(m.marker.length);
+        if (m.wholeRemaining) {
+          // Wrap everything remaining after the marker
+          const text = remaining.slice(m.marker.length).trimStart();
+          result += `<span class="${m.className}">${text}</span>`;
+          return result; // done, no more markers applied
+        } else {
+          // Regular marker, just replace the marker itself
+          result += `<span class="${m.className}">${m.display}</span> `;
+          remaining = remaining.slice(m.marker.length);
+        }
         matched = true;
-        break; // restart checking markers at new position
+        break; // restart markers at new position
       }
     }
 
     if (!matched) {
-      // no more markers at start, append rest
-      result += remaining.trimStart(); // remove extra leading spaces
+      // No marker found at start, append the rest
+      result += remaining.trimStart();
       break;
     }
   }
 
   return result;
 }
-
-
-
 
 function isParent(parent, child) {
   return child && child.startsWith(parent + '/'); // Improved: avoids false matches
@@ -176,3 +184,21 @@ chartLogicScript.onerror = () => {
 };
 document.head.appendChild(chartLogicScript);
 
+const toggleBtn = document.getElementById('sidebar-toggle');
+toggleBtn.addEventListener('click', () => {
+  sidebar.classList.toggle('collapsed');
+  content.classList.toggle('collapsed');
+
+  // Optional: store state in localStorage
+  if (sidebar.classList.contains('collapsed')) {
+    localStorage.setItem('sidebarCollapsed', 'true');
+  } else {
+    localStorage.setItem('sidebarCollapsed', 'false');
+  }
+});
+
+// On load, restore sidebar state
+if (localStorage.getItem('sidebarCollapsed') === 'true') {
+  sidebar.classList.add('collapsed');
+  content.classList.add('collapsed');
+}

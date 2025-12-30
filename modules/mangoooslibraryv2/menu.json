@@ -1,14 +1,14 @@
 [
   {
-    "title": "[i]Index",
+    "title": "[i][S][C] Home",
     "path": "content/Index/index.html",
     "children": [
       {
-        "title": "SubCat TEMP",
+        "title": "[S] subcategory1 (temporary)",
         "path": "content/Index/SubCat/index.html",
         "children": [
           {
-            "title": "-SubCat2 TEMP",
+            "title": "[S] subcategory2 (temporary)",
             "path": "content/Index/SubCat/SubCat2/index.html"
           }
         ]
@@ -16,115 +16,115 @@
     ]
   },
   {
-    "title": "[i] Finance",
+    "title": "[i][S][C] Finance",
     "path": "content/Finance/index.html",
     "children": [
       {
-        "title": "Accounting",
+        "title": "[S] Accounting",
         "path": "content/Finance/Accounting/index.html"
       },
       {
-        "title": "Crypto",
+        "title": "[S] Crypto",
         "path": "content/Finance/Crypto/index.html"
       },
       {
-        "title": "[i] Stocks",
+        "title": "[i][S][C] Stocks",
         "path": "content/Finance/Stocks/index.html",
         "children": [
           {
-            "title": "[i] Indicator",
+            "title": "[i][S][C] Indicator",
             "path": "content/Finance/Stocks/Indicators/index.html",
             "children": [
               {
-                "title": "[-][i] Trend indicators",
+                "title": "[i][S][C] Trend indicators",
                 "path": "content/Finance/Stocks/Indicators/Trend indicators/index.html",
                 "children": [
                   {
-                    "title": "[i] SMA",
+                    "title": "[i][S][C] SMA",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/SMA/index.html"
                   },
                   {
-                    "title": "[i] EMA",
+                    "title": "[i][S][C] EMA",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/EMA/index.html"
                   },
                   {
-                    "title": "[i] MACD",
+                    "title": "[i][S][C] MACD",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/MACD/index.html"
                   },
                   {
-                    "title": "ADX",
+                    "title": "[S] ADX",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/ADX/index.html"
                   },
                   {
-                    "title": "SAR",
+                    "title": "[S] SAR",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/SAR/index.html"
                   },
                   {
-                    "title": "BB",
+                    "title": "[S] BB",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/BB/index.html"
                   },
                   {
-                    "title": "IC",
+                    "title": "[S] IC",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/IC/index.html"
                   },
                   {
-                    "title": "HMA",
+                    "title": "[S] HMA",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/HMA/index.html"
                   },
                   {
-                    "title": "STI",
+                    "title": "[S] STI",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/STI/index.html"
                   },
                   {
-                    "title": "DC",
+                    "title": "[S] DC",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/DC/index.html"
                   }
                 ]
               },
               {
-                "title": "[-] Momentum Indicators",
+                "title": "[S][C] Momentum Indicators",
                 "path": "content/Finance/Stocks/Indicators/Momentum Indicators/index.html"
               },
               {
-                "title": "[-] Volatility Indicators",
+                "title": "[S][C] Volatility Indicators",
                 "path": "content/Finance/Stocks/Indicators/Volatility Indicators/index.html"
               },
               {
-                "title": "[-][i] Volume Indicators",
+                "title": "[i][S][C] Volume Indicators",
                 "path": "content/Finance/Stocks/Indicators/Volume Indicators/index.html",
                 "children": [
                   {
-                    "title": "[-][i] VWAP",
+                    "title": "[i][S][C] VWAP",
                     "path": "content/Finance/Stocks/Indicators/Volume Indicators/VWAP/index.html"
                   },
                   {
-                    "title": "[-][i] OBV",
+                    "title": "[i][S][C] OBV",
                     "path": "content/Finance/Stocks/Indicators/Volume Indicators/OBV/index.html"
                   }
                 ]
               },
               {
-                "title": "[-] Oscillators",
+                "title": "[S][C] Oscillators",
                 "path": "content/Finance/Stocks/Indicators/Oscillators/index.html"
               },
               {
-                "title": "[-] Support & Resistance",
+                "title": "[S][C] Support & Resistance",
                 "path": "content/Finance/Stocks/Indicators/Support & Resistance/index.html"
               },
               {
-                "title": "[-] Breadth Indicators",
+                "title": "[S][C] Breadth Indicators",
                 "path": "content/Finance/Stocks/Indicators/Breadth Indicators/index.html"
               },
               {
-                "title": "[-] Sentiment Indicators",
+                "title": "[S][C] Sentiment Indicators",
                 "path": "content/Finance/Stocks/Indicators/Sentiment Indicators/index.html"
               },
               {
-                "title": "[-] Statistical or Quant Indicators",
+                "title": "[S][C] Statistical or Quant Indicators",
                 "path": "content/Finance/Stocks/Indicators/Statistical or Quant Indicators/index.html"
               },
               {
-                "title": "[-] Hybrid or Composite Indicators",
+                "title": "[S][C] Hybrid or Composite Indicators",
                 "path": "content/Finance/Stocks/Indicators/Hybrid or Composite Indicators/index.html"
               }
             ]
@@ -132,49 +132,49 @@
         ]
       },
       {
-        "title": "Economics",
+        "title": "[S] Economics",
         "path": "content/Finance/Economics/index.html"
       }
     ]
   },
   {
-    "title": "Mathematics",
+    "title": "[S] Mathematics",
     "path": "content/Mathematics/index.html",
     "children": [
       {
-        "title": "Calculus",
+        "title": "[S] Calculus",
         "path": "content/Mathematics/Calculus/index.html"
       },
       {
-        "title": "Linear algebra",
+        "title": "[S] Linear algebra",
         "path": "content/Mathematics/Linear algebra/index.html"
       },
       {
-        "title": "Quantum mechanics",
+        "title": "[S] Quantum mechanics",
         "path": "content/Mathematics/Quantum mechanics/index.html"
       }
     ]
   },
   {
-    "title": "Science",
+    "title": "[S] Science",
     "path": "content/Science/index.html",
     "children": [
       {
-        "title": "Biology",
+        "title": "[S] Biology",
         "path": "content/Science/Biology/index.html"
       },
       {
-        "title": "Chemistry",
+        "title": "[S] Chemistry",
         "path": "content/Science/Chemistry/index.html"
       }
     ]
   },
   {
-    "title": "Miscellaneous",
+    "title": "[S] Miscellaneous",
     "path": "content/Miscellaneous/index.html",
     "children": [
       {
-        "title": "3D",
+        "title": "[S] 3D",
         "path": "content/Miscellaneous/3D/index.html"
       }
     ]
