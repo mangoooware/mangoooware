@@ -4,14 +4,17 @@ git commit -m "Add new file"
 git push origin main
 
 # Current pages written by AI:
+<i>(this page was written by ai as a test)</i>
   - VWAP
+  - OBV
+  - IMSI-catcher
 
 # formating json 
   - for color write like this:
     "title": "[i][-] Index",
 
 # Default html for writing new content:
-###
+--- ##### ----
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,4 +30,4 @@ git push origin main
 </body>
 </html>
 
-###
+--- ##### ----

@@ -156,6 +156,38 @@
     ]
   },
   {
+    "title": "[S] Technology",
+    "path": "content/Technology/index.html",
+    "children": [
+      {
+        "title": "[S] Internet ",
+        "path": "content/Technology/Internet/index.html",
+        "children": [
+        {
+          "title": "[S] WiFi",
+          "path": "content/Technology/Internet/WiFi/index.html"
+        }
+       ]
+      },
+      {
+        "title": "[S] Cellular network",
+        "path": "content/Technology/Cellular network/index.html",
+        "children": [
+         { 
+          "title": "[S] IMSI-catcher",
+          "path": "content/Technology/Cellular network/IMSI-catcher/index.html"
+         }
+       ]
+      },
+      {
+        "title": "[S] Hardware",
+        "path": "content/Technology/Hardware/index.html"
+      }
+    ]
+  },
+
+
+  {
     "title": "[S] Science",
     "path": "content/Science/index.html",
     "children": [
@@ -174,7 +206,7 @@
     "path": "content/Miscellaneous/index.html",
     "children": [
       {
-        "title": "[S] 3D",
+        "title": "[S] 3D printing",
         "path": "content/Miscellaneous/3D/index.html"
       }
     ]
