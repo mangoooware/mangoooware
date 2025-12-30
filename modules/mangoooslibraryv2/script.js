@@ -105,10 +105,9 @@
 
   // === PUT YOUR IMAGE URLS HERE ===
   const backgrounds = [
-      '/modules/mangoooslibraryv2/Images/anime girl.jpg',
-      '/modules/mangoooslibraryv2/Images/anime girl2.jpg',
       '/modules/mangoooslibraryv2/Images/WhiteBG.jpg',
-      '/modules/mangoooslibraryv2/Images/Winter.jpg',
+      '/modules/mangoooslibraryv2/Images/Black.jpeg',
+      '/modules/mangoooslibraryv2/Images/Mountain.jpeg',
       '' // empty string = no background (dark only)
   ];
 
@@ -172,7 +171,8 @@
     { marker: '[NEW]', className: 'new', display: 'NEW' },
     { marker: '[UPDATE]', className: 'updatecat', display: '✉' },
     { marker: '[C]', className: 'custom', wholeRemaining: true },
-    { marker: '[S]', className: 'space', display: ' |' }
+    { marker: '[S]', className: 'space', display: ' |' },
+    { marker: '[B]', className: 'blank', display: ' ' }
   ];
 
   function formatTitle(title) {

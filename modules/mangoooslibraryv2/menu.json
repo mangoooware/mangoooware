@@ -4,11 +4,11 @@
     "path": "content/Index/index.html",
     "children": [
       {
-        "title": "[S] 1. subcat",
+        "title": "[B][S] 1. subcat",
         "path": "content/Index/SubCat/index.html",
         "children": [
           {
-            "title": "[S] 1.1 subcat",
+            "title": "[B][S] 1.1 subcat",
             "path": "content/Index/SubCat/SubCat2/index.html"
           }
         ]
@@ -20,11 +20,11 @@
     "path": "content/Finance/index.html",
     "children": [
       {
-        "title": "[S] Accounting",
+        "title": "[B][S] Accounting",
         "path": "content/Finance/Accounting/index.html"
       },
       {
-        "title": "[S] Crypto",
+        "title": "[B][S] Crypto",
         "path": "content/Finance/Crypto/index.html"
       },
       {
@@ -52,41 +52,41 @@
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/MACD/index.html"
                   },
                   {
-                    "title": "[S] ADX",
+                    "title": "[B][S] ADX",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/ADX/index.html"
                   },
                   {
-                    "title": "[S] SAR",
+                    "title": "[B][S] SAR",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/SAR/index.html"
                   },
                   {
-                    "title": "[S] BB",
+                    "title": "[B][S] BB",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/BB/index.html"
                   },
                   {
-                    "title": "[S] IC",
+                    "title": "[B][S] IC",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/IC/index.html"
                   },
                   {
-                    "title": "[S] HMA",
+                    "title": "[B][S] HMA",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/HMA/index.html"
                   },
                   {
-                    "title": "[S] STI",
+                    "title": "[B][S] STI",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/STI/index.html"
                   },
                   {
-                    "title": "[S] DC",
+                    "title": "[B][S] DC",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/DC/index.html"
                   }
                 ]
               },
               {
-                "title": "[S] Momentum Indicators",
+                "title": "[B][S] Momentum Indicators",
                 "path": "content/Finance/Stocks/Indicators/Momentum Indicators/index.html"
               },
               {
-                "title": "[S] Volatility Indicators",
+                "title": "[B][S] Volatility Indicators",
                 "path": "content/Finance/Stocks/Indicators/Volatility Indicators/index.html"
               },
               {
@@ -104,27 +104,27 @@
                 ]
               },
               {
-                "title": "[S] Oscillators",
+                "title": "[B][S] Oscillators",
                 "path": "content/Finance/Stocks/Indicators/Oscillators/index.html"
               },
               {
-                "title": "[S] Support & Resistance",
+                "title": "[B][S] Support & Resistance",
                 "path": "content/Finance/Stocks/Indicators/Support & Resistance/index.html"
               },
               {
-                "title": "[S] Breadth Indicators",
+                "title": "[B][S] Breadth Indicators",
                 "path": "content/Finance/Stocks/Indicators/Breadth Indicators/index.html"
               },
               {
-                "title": "[S] Sentiment Indicators",
+                "title": "[B][S] Sentiment Indicators",
                 "path": "content/Finance/Stocks/Indicators/Sentiment Indicators/index.html"
               },
               {
-                "title": "[S] Statistical or Quant Indicators",
+                "title": "[B][S] Statistical or Quant Indicators",
                 "path": "content/Finance/Stocks/Indicators/Statistical or Quant Indicators/index.html"
               },
               {
-                "title": "[S] Hybrid or Composite Indicators",
+                "title": "[B][S] Hybrid or Composite Indicators",
                 "path": "content/Finance/Stocks/Indicators/Hybrid or Composite Indicators/index.html"
               }
             ]
@@ -132,25 +132,25 @@
         ]
       },
       {
-        "title": "[S] Economics",
+        "title": "[B][S] Economics",
         "path": "content/Finance/Economics/index.html"
       }
     ]
   },
   {
-    "title": "[S] Mathematics",
+    "title": "[B][S] Mathematics",
     "path": "content/Mathematics/index.html",
     "children": [
       {
-        "title": "[S] Calculus",
+        "title": "[B][S] Calculus",
         "path": "content/Mathematics/Calculus/index.html"
       },
       {
-        "title": "[S] Linear algebra",
+        "title": "[B][S] Linear algebra",
         "path": "content/Mathematics/Linear algebra/index.html"
       },
       {
-        "title": "[S] Quantum mechanics",
+        "title": "[B][S] Quantum mechanics",
         "path": "content/Mathematics/Quantum mechanics/index.html"
       }
     ]
@@ -160,11 +160,11 @@
     "path": "content/Technology/index.html",
     "children": [
       {
-        "title": "[S] Internet ",
+        "title": "[B][S] Internet ",
         "path": "content/Technology/Internet/index.html",
         "children": [
         {
-          "title": "[S] WiFi",
+          "title": "[B][S] WiFi",
           "path": "content/Technology/Internet/WiFi/index.html"
         }
        ]
@@ -180,7 +180,7 @@
        ]
       },
       {
-        "title": "[S] Hardware",
+        "title": "[B][S] Hardware",
         "path": "content/Technology/Hardware/index.html"
       }
     ]
@@ -188,25 +188,25 @@
 
 
   {
-    "title": "[S] Science",
+    "title": "[B][S] Science",
     "path": "content/Science/index.html",
     "children": [
       {
-        "title": "[S] Biology",
+        "title": "[B][S] Biology",
         "path": "content/Science/Biology/index.html"
       },
       {
-        "title": "[S] Chemistry",
+        "title": "[B][S] Chemistry",
         "path": "content/Science/Chemistry/index.html"
       }
     ]
   },
   {
-    "title": "[S] Miscellaneous",
+    "title": "[B][S] Miscellaneous",
     "path": "content/Miscellaneous/index.html",
     "children": [
       {
-        "title": "[S] 3D printing",
+        "title": "[B][S] 3D printing",
         "path": "content/Miscellaneous/3D/index.html"
       }
     ]
