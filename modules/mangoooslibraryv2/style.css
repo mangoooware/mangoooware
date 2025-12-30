@@ -29,7 +29,8 @@ aside {
   width: 250px;
   overflow-y: auto;
   padding: 10px;
-  background-color: rgba(2, 2, 2, 0.616);
+  background-color: rgba(0, 0, 0, 0.103);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
   font-size: 20px;
   margin: 15px;
   padding: 20px;

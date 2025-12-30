@@ -13,6 +13,9 @@ git push origin main
   - for color write like this:
     "title": "[i][-] Index",
 
+# Refer to other page
+  <a href="#" data-path="/modules/mangoooslibraryv2/content/.../index.html"></a>
+
 # Default html for writing new content:
 --- ##### ----
 
