@@ -4,11 +4,11 @@
     "path": "content/Index/index.html",
     "children": [
       {
-        "title": "[S] subcategory1 (temporary)",
+        "title": "[S] 1. subcat",
         "path": "content/Index/SubCat/index.html",
         "children": [
           {
-            "title": "[S] subcategory2 (temporary)",
+            "title": "[S] 1.1 subcat",
             "path": "content/Index/SubCat/SubCat2/index.html"
           }
         ]
@@ -82,11 +82,11 @@
                 ]
               },
               {
-                "title": "[S][C] Momentum Indicators",
+                "title": "[S] Momentum Indicators",
                 "path": "content/Finance/Stocks/Indicators/Momentum Indicators/index.html"
               },
               {
-                "title": "[S][C] Volatility Indicators",
+                "title": "[S] Volatility Indicators",
                 "path": "content/Finance/Stocks/Indicators/Volatility Indicators/index.html"
               },
               {
@@ -104,27 +104,27 @@
                 ]
               },
               {
-                "title": "[S][C] Oscillators",
+                "title": "[S] Oscillators",
                 "path": "content/Finance/Stocks/Indicators/Oscillators/index.html"
               },
               {
-                "title": "[S][C] Support & Resistance",
+                "title": "[S] Support & Resistance",
                 "path": "content/Finance/Stocks/Indicators/Support & Resistance/index.html"
               },
               {
-                "title": "[S][C] Breadth Indicators",
+                "title": "[S] Breadth Indicators",
                 "path": "content/Finance/Stocks/Indicators/Breadth Indicators/index.html"
               },
               {
-                "title": "[S][C] Sentiment Indicators",
+                "title": "[S] Sentiment Indicators",
                 "path": "content/Finance/Stocks/Indicators/Sentiment Indicators/index.html"
               },
               {
-                "title": "[S][C] Statistical or Quant Indicators",
+                "title": "[S] Statistical or Quant Indicators",
                 "path": "content/Finance/Stocks/Indicators/Statistical or Quant Indicators/index.html"
               },
               {
-                "title": "[S][C] Hybrid or Composite Indicators",
+                "title": "[S] Hybrid or Composite Indicators",
                 "path": "content/Finance/Stocks/Indicators/Hybrid or Composite Indicators/index.html"
               }
             ]

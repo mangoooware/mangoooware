@@ -182,9 +182,13 @@ mjx-container[jax="CHTML"] {
 }
 
 .custom { 
+  color: #007bff;
+ 
+  /* TEXT UNDERLINE
  text-decoration: underline 1px;
  text-underline-offset: 4px;
- text-decoration-color: #3b4741;  
+ text-decoration-color: #3b4741;
+ */  
 }
 
 .space {
