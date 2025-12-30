@@ -43,10 +43,11 @@ main {
 }
 
 .sidebar-item {
-  border-radius: 10px;
+  border-radius: 5px;
   border-color: #61606048;
-  margin: 10px;
-  font-weight: 750;
+  margin: 5px;
+  font-size: 17px;
+  font-weight: 600;
   cursor: pointer;
   padding: 4px 8px;
   display: block;
