@@ -210,19 +210,5 @@
         "path": "content/Miscellaneous/3D/index.html"
       }
     ]
-  },
-  {
-    "title": "[UPDATE][S] Update-logs",
-    "path": "content/Updates/index.html",
-    "children": [
-      {
-        "title": "[S] Beta",
-        "path": "content/Updates/Beta/index.html"
-      },
-      {
-        "title": "[S] 1.0 12/30/25",
-        "path": "content/Updates/1.0/index.html"
-      }
-    ]
   }
 ]

@@ -16,6 +16,25 @@ git push origin main
 # Refer to other page
   <a href="#" data-path="/modules/mangoooslibraryv2/content/.../index.html"></a>
 
+# Unicodes for sorting
+  ∙ 
+  ●
+  ○
+  ★
+  ✓
+  ⧉
+  ⌂
+  ▶
+  ▷
+  ›
+  ☰
+
+# Arrows
+  ←
+  ↑
+  →
+  ↓
+
 # Default html for writing new content:
 --- ##### ----
 
