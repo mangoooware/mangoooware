@@ -156,7 +156,7 @@
     ]
   },
   {
-    "title": "[S] Technology",
+    "title": "[i][S][C] Technology",
     "path": "content/Technology/index.html",
     "children": [
       {
@@ -170,11 +170,11 @@
        ]
       },
       {
-        "title": "[S] Cellular network",
+        "title": "[i][S][C] Cellular network",
         "path": "content/Technology/Cellular network/index.html",
         "children": [
          { 
-          "title": "[S] IMSI-catcher",
+          "title": "[i][S][C] IMSI-catcher",
           "path": "content/Technology/Cellular network/IMSI-catcher/index.html"
          }
        ]
