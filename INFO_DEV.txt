@@ -1,0 +1,11 @@
+# Uploading to git:
+git add .
+git commit -m "Add new file"
+git push origin main
+
+# Current pages written by AI:
+  - VWAP
+
+# formating json 
+  - for color write like this:
+    "title": "[i][-] Index",

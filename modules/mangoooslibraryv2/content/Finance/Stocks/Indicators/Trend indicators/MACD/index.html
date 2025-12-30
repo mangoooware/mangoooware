@@ -137,21 +137,26 @@
         
         The full equation of the signal line is:<br><br>
         <div class="inline-math-box">
-         $ \text{Signal}_t = \alpha \cdot \text{MACD}_t + (1 - \alpha)\cdot \text{Signal}_{t-1} $ <br><br>
+         $ \text{Signal}_t = \alpha \cdot \text{MACD}_t + (1 - \alpha)\cdot \text{Signal}_{t-1} $
         </div>
 
         <br><br>
-        We can break this up in 2 parts:
+        We can break this up in 2 parts, 1:
 
         <br><br>
 
         <div class="inline-math-box">
       $ \text{Signal Line}_t = \alpha \cdot (\text{MACD Line})_t  $
      </div>
-
+     <br><br>
+      And 2:
+    <br><br>
+    <div class="inline-math-box">
+    $ (1 - \alpha)\cdot \text{Signal}_{t-1} $
+    </div>
      <br><br>
 
-     Or simply said:
+     Solving part 1 simply:
 
      <br><br>
       

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VWAP</title>
+  <script src="C:\Users\Gebruiker\Documents\mangooowareLIVE\modules\mangoooslibraryv2\script.js"></script>
+</head>
+<body>
+  <div class="page">
+    <i>(this page was written by ai as a test)</i>
+    <h1>VWAP</h1>
+    VWAP (Volume Weighted Average Price) is used to see the average price a stock has traded at during the day, giving more weight to prices where more volume was traded. This helps traders understand if the current price is above or below the "fair" average price for the session so far.
+    <br><br>
+    It's especially useful for intraday trading to gauge if buyers or sellers are in control (price above VWAP = bullish, below = bearish) and as a benchmark for good execution.
+    <br><br>
+    To calculate VWAP you need the typical price (usually the average of high, low and close) and the volume for each period (e.g., each 5-minute bar).
+    <h1>The VWAP formula</h1>
+    VWAP is a single cumulative line that updates throughout the day.
+    <br><br>
+    <div class="ema-formula-group">
+      <br><br>
+      <div class="inline-math-box">
+      
+\[ \text{Typical Price} = \frac{\text{High} + \text{Low} + \text{Close}}{3} \]
+\[ \text{VWAP} = \frac{\sum (\text{Typical Price} \times \text{Volume})}{\sum \text{Volume}} \]
+<b>where:</b> <br><br>
+- The sums are cumulative from the start of the trading session (or anchored point) up to the current period.<br><br>
+- Higher volume periods have more influence on the VWAP value.
+</div>
+<br><br><br>
+</div>
+   
+    <br><br>
+    <h2>1. Typical Price</h2>
+    We will use random values from intraday periods to use as an example.
+    <br><br>
+    <div class="ema-formula-group">
+      <br>
+      <b>First period: High = 50.50, Low = 49.80, Close = 50.20, Volume = 10,000</b>
+      <br><br>
+      Calculate the typical price:
+      <br><br>
+      <div class="inline-math-box">
+        \[ \text{Typical Price} = \frac{50.50 + 49.80 + 50.20}{3} \]
+        \[ \text{Typical Price} = \frac{150.50}{3} = 50.1667 \]
+      </div>
+      <br><br>
+      <h3>Our typical price for period 1 is 50.17 (rounded)</h3>
+      <br><br>
+    </div>
+    <br><br>
+    <h2>2. Price-Volume (PV) for the period</h2>
+    Multiply the typical price by the volume for this period.
+    <br><br>
+    <div class="ema-formula-group">
+      <br>
+      <div class="inline-math-box">
+        \[ \text{PV}_1 = 50.1667 \times 10,000 = 501,667 \]
+      </div>
+      <br><br>
+      <h3>PV for period 1 = 501,667</h3>
+      <br><br>
+    </div>
+    <br><br>
+    <h2>3. Cumulative totals after first period</h2>
+    Since it's the first period, the cumulatives are just these values.
+    <br><br>
+    <div class="ema-formula-group">
+      <br>
+      <b>Cumulative PV = 501,667</b><br>
+      <b>Cumulative Volume = 10,000</b>
+      <br><br>
+      <h3>VWAP after period 1 = 501,667 / 10,000 = 50.17</h3>
+      This is basically everything you need for the first period – VWAP starts at the typical price.
+      <br><br>
+    </div>
+    <br><br>
+    <h2>4. Adding the second period</h2>
+    Let's add another period to see how it updates.
+    <br><br>
+    <div class="ema-formula-group">
+      <br>
+      <b>Second period: High = 51.00, Low = 50.30, Close = 50.80, Volume = 15,000</b>
+      <br><br>
+      Typical price:
+      <br><br>
+      <div class="inline-math-box">
+        \[ \text{Typical Price}_2 = \frac{51.00 + 50.30 + 50.80}{3} = 50.70 \]
+      </div>
+      <br><br>
+      PV for period 2:
+      <br><br>
+      <div class="inline-math-box">
+        \[ \text{PV}_2 = 50.70 \times 15,000 = 760,500 \]
+      </div>
+      <br><br>
+      Now add to cumulatives:
+      <br><br>
+      <div class="inline-math-box">
+        \[ \text{Cumulative PV} = 501,667 + 760,500 = 1,262,167 \]
+        \[ \text{Cumulative Volume} = 10,000 + 15,000 = 25,000 \]
+      </div>
+      <br><br>
+      <h3>VWAP after period 2 = 1,262,167 / 25,000 = 50.4867 (about 50.49)</h3>
+      Notice how the higher volume in period 2 pulled the VWAP up toward 50.70.
+      <br><br>
+    </div>
+    <br><br>
+    <h2>5. Adding more periods</h2>
+    You keep doing this for every new period during the day – always adding the new PV to the running cumulative PV and the new volume to the cumulative volume.
+    <br><br>
+    <div class="ema-formula-group">
+      <br>
+      Let's quickly add a third period with lower price but less volume:
+      <br><br>
+      <b>Third period: High = 50.40, Low = 49.90, Close = 50.10, Volume = 8,000</b>
+      <br><br>
+      Typical price ≈ 50.13<br>
+      PV₃ ≈ 401,040<br><br>
+      New cumulatives:<br>
+      Cumulative PV ≈ 1,663,207<br>
+      Cumulative Volume = 33,000<br><br>
+      <div class="inline-math-box">
+        \[ \text{VWAP} \approx \frac{1,663,207}{33,000} \approx 50.40 \]
+      </div>
+      <br><br>
+      <h3>The lower volume means it doesn't pull VWAP down as much.</h3>
+      <br>
+    </div>
+    <br><br>
+    <h3>With VWAP we can tell:</h3>
+    Price above VWAP → more buying pressure overall → bullish tilt (institutions likely buying).<br>
+    Price below VWAP → more selling pressure overall → bearish tilt (institutions likely selling).<br><br>
+    VWAP acts like dynamic support/resistance and a "fair value" benchmark for the session.
+  
+  </div>
+</body>
+</html>

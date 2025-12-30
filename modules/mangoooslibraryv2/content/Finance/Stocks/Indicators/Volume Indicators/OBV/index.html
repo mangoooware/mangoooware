@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>On-Balance Volume (OBV)</title>
+  <script src="C:\Users\Gebruiker\Documents\mangooowareLIVE\modules\mangoooslibraryv2\script.js"></script>
+</head>
+<body>
+  <div class="page">
+    <i>(this page was written by ai as a test)</i>
+    <h1>On-Balance Volume (OBV)</h1>
+    On-Balance Volume (OBV) is used to measure buying and selling pressure by adding volume on days the price closes higher and subtracting volume on days the price closes lower. It helps confirm trends or spot divergences – if price makes new highs but OBV doesn't, it can signal weakening momentum.
+    <br><br>
+    OBV is a cumulative indicator: it keeps a running total of volume, directed by price movement.
+    <br><br>
+    <h1>The OBV formula</h1>
+    OBV is very simple and builds over time.
+    <br><br>
+    <div class="ema-formula-group">
+      <br><br>
+      <div class="inline-math-box">
+      
+\[ \text{OBV}_t = \text{OBV}_{t-1} + \text{Volume Adjustment} \]
+<br><br>
+<b>where the Volume Adjustment is:</b><br><br>
+- + Today's Volume &nbsp;&nbsp;&nbsp;&nbsp; if Close > Previous Close (up day)<br><br>
+- 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if Close = Previous Close (flat day)<br><br>
+- - Today's Volume &nbsp;&nbsp;&nbsp;&nbsp; if Close < Previous Close (down day)
+</div>
+<br><br><br>
+</div>
+   
+    <br><br>
+    <h2>1. Starting point</h2>
+    The very first OBV value is usually set to 0 or just the first day's volume (depending on the platform). We'll start with OBV = 0 before the first day.
+    <br><br>
+    <div class="ema-formula-group">
+      <br>
+      <b>OBV yesterday = 0</b>
+      <br><br>
+    </div>
+    <br><br>
+    <h2>2. First day (up day example)</h2>
+    Let's use random daily data to build OBV step by step.
+    <br><br>
+    <div class="ema-formula-group">
+      <br>
+      <b>Day 1: Close = 52.10, Volume = 12,000</b><br>
+      (No previous close, so we often just add the volume or set OBV to volume. We'll add it.)
+      <br><br>
+      <div class="inline-math-box">
+        \[ \text{OBV}_1 = 0 + 12,000 = 12,000 \]
+      </div>
+      <br><br>
+      <h3>OBV after day 1 = 12,000</h3>
+      <br><br>
+    </div>
+    <br><br>
+    <h2>3. Second day (up day)</h2>
+    <br><br>
+    <div class="ema-formula-group">
+      <br>
+      <b>Day 2: Close = 53.20 (higher than 52.10), Volume = 15,000</b>
+      <br><br>
+      Since price closed higher, we add the volume:
+      <br><br>
+      <div class="inline-math-box">
+        \[ \text{OBV}_2 = 12,000 + 15,000 = 27,000 \]
+      </div>
+      <br><br>
+      <h3>OBV after day 2 = 27,000</h3>
+      Rising OBV confirms buying pressure is building.
+      <br><br>
+    </div>
+    <br><br>
+    <h2>4. Third day (down day)</h2>
+    <br><br>
+    <div class="ema-formula-group">
+      <br>
+      <b>Day 3: Close = 52.80 (lower than 53.20), Volume = 10,000</b>
+      <br><br>
+      Since price closed lower, we subtract the volume:
+      <br><br>
+      <div class="inline-math-box">
+        \[ \text{OBV}_3 = 27,000 - 10,000 = 17,000 \]
+      </div>
+      <br><br>
+      <h3>OBV after day 3 = 17,000</h3>
+      OBV falls, showing selling pressure on this day.
+      <br><br>
+    </div>
+    <br><br>
+    <h2>5. Fourth day (flat day)</h2>
+    <br><br>
+    <div class="ema-formula-group">
+      <br>
+      <b>Day 4: Close = 52.80 (same as day 3), Volume = 8,000</b>
+      <br><br>
+      No price change → volume is not added or subtracted:
+      <br><br>
+      <div class="inline-math-box">
+        \[ \text{OBV}_4 = 17,000 + 0 = 17,000 \]
+      </div>
+      <br><br>
+      <h3>OBV after day 4 = 17,000</h3>
+      Flat days don't affect OBV.
+      <br><br>
+    </div>
+    <br><br>
+    <h2>6. Fifth day (up day)</h2>
+    <br><br>
+    <div class="ema-formula-group">
+      <br>
+      <b>Day 5: Close = 54.00 (higher than 52.80), Volume = 20,000</b>
+      <br><br>
+      Price up → add the volume:
+      <br><br>
+      <div class="inline-math-box">
+        \[ \text{OBV}_5 = 17,000 + 20,000 = 37,000 \]
+      </div>
+      <br><br>
+      <h3>OBV after day 5 = 37,000</h3>
+      Strong buying volume pushes OBV to a new high.
+      <br>
+    </div>
+    <br><br>
+    <h3>With OBV we can tell:</h3>
+    Rising OBV while price rises → strong bullish trend (volume confirms the move).<br>
+    Falling OBV while price falls → strong bearish trend.<br><br>
+    Rising OBV but flat/falling price → potential bullish divergence (accumulation).<br>
+    Falling OBV but rising price → potential bearish divergence (distribution).<br><br>
+    The absolute OBV number matters less than its direction and whether it confirms price trends.
+  
+  </div>
+</body>
+</html>

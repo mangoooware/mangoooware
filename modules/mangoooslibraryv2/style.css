@@ -134,3 +134,25 @@ mjx-container[jax="CHTML"] {
   border-right: none;
   border-radius: 15px 0 0 15px; /* Curved edges on the left side */
 }
+
+.info {
+  color: #7370fd;
+  font-size: 30px;
+  font-family:
+    "Hoefler Text",
+    "Baskerville",
+    "Libre Baskerville",
+    "Times New Roman",
+    serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.warn {
+  color: #bde21a;
+  font-weight: bold;
+}
+
+.new {
+  color: #fc009b;
+}

@@ -28,7 +28,7 @@ function buildTree(items) {
   items.forEach(item => {
     const li = document.createElement('li');
     const a = document.createElement('a');
-    a.textContent = item.title;
+    a.innerHTML = formatTitle(item.title);
     a.href = "#";
     a.className = 'sidebar-item';
     a.dataset.path = item.path;
@@ -68,6 +68,41 @@ function buildTree(items) {
   });
   return ul;
 }
+
+const TITLE_MARKERS = [
+  { marker: '[i]', className: 'info', display: 'i' },
+  { marker: '[-]', className: 'warn', display: '-' },
+  { marker: '[NEW]', className: 'new', display: 'NEW' }
+];
+
+function formatTitle(title) {
+  let result = '';
+  let remaining = title;
+
+  while (remaining.length > 0) {
+    let matched = false;
+
+    for (const m of TITLE_MARKERS) {
+      if (remaining.startsWith(m.marker)) {
+        result += `<span class="${m.className}">${m.display}</span> `;
+        remaining = remaining.slice(m.marker.length);
+        matched = true;
+        break; // restart checking markers at new position
+      }
+    }
+
+    if (!matched) {
+      // no more markers at start, append rest
+      result += remaining.trimStart(); // remove extra leading spaces
+      break;
+    }
+  }
+
+  return result;
+}
+
+
+
 
 function isParent(parent, child) {
   return child && child.startsWith(parent + '/'); // Improved: avoids false matches

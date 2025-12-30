@@ -1,6 +1,6 @@
 [
   {
-    "title": "Index *",
+    "title": "[i]Index",
     "path": "content/Index/index.html",
     "children": [
       {
@@ -8,7 +8,7 @@
         "path": "content/Index/SubCat/index.html",
         "children": [
           {
-            "title": "SubCat2 TEMP",
+            "title": "-SubCat2 TEMP",
             "path": "content/Index/SubCat/SubCat2/index.html"
           }
         ]
@@ -16,7 +16,7 @@
     ]
   },
   {
-    "title": "Finance *",
+    "title": "[i] Finance",
     "path": "content/Finance/index.html",
     "children": [
       {
@@ -28,27 +28,27 @@
         "path": "content/Finance/Crypto/index.html"
       },
       {
-        "title": "Stocks *",
+        "title": "[i] Stocks",
         "path": "content/Finance/Stocks/index.html",
         "children": [
           {
-            "title": "Indicator *",
+            "title": "[i] Indicator",
             "path": "content/Finance/Stocks/Indicators/index.html",
             "children": [
               {
-                "title": "Trend indicators *",
+                "title": "[-] Trend indicators",
                 "path": "content/Finance/Stocks/Indicators/Trend indicators/index.html",
                 "children": [
                   {
-                    "title": "SMA *",
+                    "title": "[i] SMA",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/SMA/index.html"
                   },
                   {
-                    "title": "EMA *",
+                    "title": "[i] EMA",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/EMA/index.html"
                   },
                   {
-                    "title": "MACD *",
+                    "title": "[i] MACD",
                     "path": "content/Finance/Stocks/Indicators/Trend indicators/MACD/index.html"
                   },
                   {
@@ -82,39 +82,49 @@
                 ]
               },
               {
-                "title": "Momentum Indicators",
+                "title": "[-] Momentum Indicators",
                 "path": "content/Finance/Stocks/Indicators/Momentum Indicators/index.html"
               },
               {
-                "title": "Volatility Indicators",
+                "title": "[-] Volatility Indicators",
                 "path": "content/Finance/Stocks/Indicators/Volatility Indicators/index.html"
               },
               {
-                "title": "Volume Indicators",
-                "path": "content/Finance/Stocks/Indicators/Volume Indicators/index.html"
+                "title": "[-][i] Volume Indicators",
+                "path": "content/Finance/Stocks/Indicators/Volume Indicators/index.html",
+                "children": [
+                  {
+                    "title": "[-][i] VWAP",
+                    "path": "content/Finance/Stocks/Indicators/Volume Indicators/VWAP/index.html"
+                  },
+                  {
+                    "title": "[-][i] OBV",
+                    "path": "content/Finance/Stocks/Indicators/Volume Indicators/OBV/index.html"
+                  }
+                ]
               },
               {
-                "title": "Oscillators",
+                "title": "[-] Oscillators",
                 "path": "content/Finance/Stocks/Indicators/Oscillators/index.html"
               },
               {
-                "title": "Support & Resistance",
+                "title": "[-] Support & Resistance",
                 "path": "content/Finance/Stocks/Indicators/Support & Resistance/index.html"
               },
               {
-                "title": "Breadth Indicators",
+                "title": "[-] Breadth Indicators",
                 "path": "content/Finance/Stocks/Indicators/Breadth Indicators/index.html"
               },
               {
-                "title": "Sentiment Indicators",
+                "title": "[-] Sentiment Indicators",
                 "path": "content/Finance/Stocks/Indicators/Sentiment Indicators/index.html"
               },
               {
-                "title": "Statistical or Quant Indicators",
+                "title": "[-] Statistical or Quant Indicators",
                 "path": "content/Finance/Stocks/Indicators/Statistical or Quant Indicators/index.html"
               },
               {
-                "title": "Hybrid or Composite Indicators",
+                "title": "[-] Hybrid or Composite Indicators",
                 "path": "content/Finance/Stocks/Indicators/Hybrid or Composite Indicators/index.html"
               }
             ]
