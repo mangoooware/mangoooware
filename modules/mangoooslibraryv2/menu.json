@@ -1,14 +1,14 @@
 [
   {
-    "title": "[i][S][C] Home",
+    "title": "[i][S] Home [NEW]",
     "path": "content/Index/index.html",
     "children": [
       {
-        "title": "[B][S] 1. subcat",
+        "title": "[B][S] 1. subcat [NEW]",
         "path": "content/Index/SubCat/index.html",
         "children": [
           {
-            "title": "[B][S] 1.1 subcat",
+            "title": "[B][S] 1.1 subcat [NEW]",
             "path": "content/Index/SubCat/SubCat2/index.html"
           }
         ]

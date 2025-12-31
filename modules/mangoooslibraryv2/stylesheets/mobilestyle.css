@@ -1,0 +1,63 @@
+@media (max-width: 812px) {
+  #sidebar
+  {
+    width: 20% !important;  
+  }
+  
+  #search-container,
+  #search-input,
+  #search-results
+  {
+    width: 100% !important;
+  }
+
+  #sidebar.collapsed
+  {
+    width: 10% !important;
+  }
+
+  .sidebar-item
+  {
+    font-size: 10px;
+  }
+
+  .info,
+  .space
+  {
+    font-size: 10px;
+  }
+
+  .blank
+  {
+    font-size: 10px;
+  }
+
+  body 
+  {
+    font-size: 12px;
+  }
+
+  #search-results
+  {
+    width: 70% !important;  
+  }
+}
+
+.rotate-warning {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #00000069;
+  color: #fff;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+@media (orientation: portrait) {
+  .rotate-warning {
+    display: flex;
+  }
+}

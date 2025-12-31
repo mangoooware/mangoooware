@@ -164,50 +164,71 @@
   // Background Changer Button
   // Background Changer Button
 
-  const TITLE_MARKERS = [
-    { marker: '[i]', className: 'info', display: 'i' },
-    { marker: '[-]', className: 'hastag', display: '‣' },
-    { marker: '[-+]', className: 'dash2', display: '·' },
-    { marker: '[NEW]', className: 'new', display: 'NEW' },
-    { marker: '[UPDATE]', className: 'updatecat', display: '✉' },
-    { marker: '[C]', className: 'custom', wholeRemaining: true },
-    { marker: '[S]', className: 'space', display: ' |' },
-    { marker: '[B]', className: 'blank', display: ' ' }
-  ];
+const TITLE_MARKERS = [
+  { marker: '[i]', className: 'info', display: 'i' },
+  { marker: '[-]', className: 'hastag', display: '‣' },
+  { marker: '[-+]', className: 'dash2', display: '·' },
+  { marker: '[UPDATE]', className: 'updatecat', display: '✉' },
+  { marker: '[S]', className: 'space', display: ' |' },
+  { marker: '[B]', className: 'blank', display: ' ' },
+  { marker: '[NEW]', className: 'new', display: 'NEW', special: 'newline-end' },
+  { marker: '[C]', className: 'custom', wholeRemaining: true }
+];
 
-  function formatTitle(title) {
-    let result = '';
-    let remaining = title;
+function formatTitle(title) {
+  let remaining = title.trim();
+  let result = '';
+  let newBadge = '';
 
-    while (remaining.length > 0) {
-      let matched = false;
+  while (remaining.length > 0) {
+    // Find the earliest marker in the current remaining string
+    let earliestIndex = remaining.length;
+    let matchedMarker = null;
 
-      for (const m of TITLE_MARKERS) {
-        if (remaining.startsWith(m.marker)) {
-          if (m.wholeRemaining) {
-            // Wrap everything remaining after the marker
-            const text = remaining.slice(m.marker.length).trimStart();
-            result += `<span class="${m.className}">${text}</span>`;
-            return result; // done, no more markers applied
-          } else {
-            // Regular marker, just replace the marker itself
-            result += `<span class="${m.className}">${m.display}</span> `;
-            remaining = remaining.slice(m.marker.length);
-          }
-          matched = true;
-          break; // restart markers at new position
-        }
-      }
-
-      if (!matched) {
-        // No marker found at start, append the rest
-        result += remaining.trimStart();
-        break;
+    for (const m of TITLE_MARKERS) {
+      const idx = remaining.indexOf(m.marker);
+      if (idx !== -1 && idx < earliestIndex) {
+        earliestIndex = idx;
+        matchedMarker = m;
       }
     }
 
-    return result;
+    if (matchedMarker === null) {
+      // No more markers → add the rest as plain text
+      result += remaining;
+      break;
+    }
+
+    // Add any plain text before the marker
+    if (earliestIndex > 0) {
+      result += remaining.slice(0, earliestIndex);
+    }
+
+    // Now process the matched marker
+    if (matchedMarker.special === 'newline-end') {
+      // Collect [NEW] for the end
+      newBadge = `<br><span class="${matchedMarker.className}">${matchedMarker.display}</span>`;
+    } else if (matchedMarker.wholeRemaining) {
+      // [C]: wrap everything AFTER the marker
+      const textAfter = remaining.slice(earliestIndex + matchedMarker.marker.length).trim();
+      if (textAfter.length > 0) {
+        result += `<span class="${matchedMarker.className}">${textAfter}</span>`;
+      }
+      // Done — nothing left to process
+      remaining = '';
+      continue;
+    } else {
+      // Normal marker
+      result += `<span class="${matchedMarker.className}">${matchedMarker.display}</span> `;
+    }
+
+    // Remove the marker (and everything up to it) from remaining
+    remaining = remaining.slice(earliestIndex + matchedMarker.marker.length).trimStart();
   }
+
+  // Finally append the NEW badge on a new line
+  return result + newBadge;
+}
 
   function isParent(parent, child) {
     return child && child.startsWith(parent + '/'); // Improved: avoids false matches
