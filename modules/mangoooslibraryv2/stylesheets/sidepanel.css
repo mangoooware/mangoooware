@@ -163,7 +163,10 @@ aside.collapsed .sidebar-item {
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
+  background-color: rgba(0, 0, 0, 0);
 }
+
+
 
 /* Show only the special markers as icons */
 aside.collapsed .sidebar-item > a > span {
