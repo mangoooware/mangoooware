@@ -166,6 +166,9 @@ aside.collapsed .sidebar-item {
   background-color: rgba(0, 0, 0, 0);
 }
 
+aside.collapsed ul {
+  margin: 100px;
+}
 
 
 /* Show only the special markers as icons */
