@@ -2,7 +2,7 @@ const infoBox = document.getElementById("info");
 
 const infoLines = [
   `User Agent: ${navigator.userAgent}`,
-  "Geolocation: (fetching location info...)",  // Moved here right after User Agent
+  "Geolocation: (fetching location info...)",  // geoDivIndex = 1
   `Platform: ${navigator.platform}`,
   `Language: ${navigator.language}`,
   `Online: ${navigator.onLine}`,
@@ -18,7 +18,6 @@ const infoLines = [
   `Window Size: ${window.innerWidth}x${window.innerHeight}`,
 ];
 
-// Plugins
 if (navigator.plugins.length > 0) {
   const pluginNames = Array.from(navigator.plugins).map(p => p.name).join(", ");
   infoLines.push(`Plugins: ${pluginNames}`);
@@ -26,13 +25,14 @@ if (navigator.plugins.length > 0) {
   infoLines.push(`Plugins: None`);
 }
 
-let geoDivIndex = 1; // since we placed geolocation at index 1
+let geoDivIndex = 1;
 
 function revealLines(lines, callback) {
   let index = 0;
   const interval = setInterval(() => {
     if (index < lines.length) {
       const div = document.createElement("div");
+      div.style.whiteSpace = "pre-line"; // keeps line breaks
       div.textContent = lines[index++];
       infoBox.appendChild(div);
     } else {
@@ -44,28 +44,37 @@ function revealLines(lines, callback) {
 
 async function addGeolocationViaAPI() {
   try {
-    const res = await fetch('https://ipwhois.app/json/');
-    const data = await res.json();
-
-    if (data.success === false) {
-      infoBox.children[geoDivIndex].textContent = "Geolocation API error: " + data.message;
-      return;
-    }
+    // Fetch CORS-friendly geolocation info
+    const res = await fetch("https://ipapi.co/json/");
+    const geo = await res.json();
 
     infoBox.children[geoDivIndex].textContent =
-      `Geolocation (ipwhois.app):\n` +
-      `IP: ${data.ip}\n` +
-      `Location: ${data.city}, ${data.region}, ${data.country}\n` +
-      `Coordinates: ${data.latitude.toFixed(5)}, ${data.longitude.toFixed(5)}\n` +
-      `Timezone: ${data.timezone}\n` +
-      `ISP: ${data.isp}\n` +
-      `Organization: ${data.org}`;
+      `Geolocation:\n` +
+      `IP: ${geo.ip}\n` +
+      `Location: ${geo.city}, ${geo.region}, ${geo.country_name}\n` +
+      `Coordinates: ${geo.latitude?.toFixed(5)}, ${geo.longitude?.toFixed(5)}\n` +
+      `Timezone: ${geo.timezone}\n` +
+      `ISP/Org: ${geo.org}\n` +
+      `Postal: ${geo.postal}`;
+
+    // Log to MongoDB via serverless
+    await fetch('/api/geo', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        geo,
+        userAgent: navigator.userAgent,
+        referrer: document.referrer || 'None',
+        acceptLanguage: navigator.language,
+        cookies: document.cookie
+      })
+    });
+
   } catch (err) {
     infoBox.children[geoDivIndex].textContent = "Geolocation API request failed.";
     console.error(err);
   }
 }
 
-revealLines(infoLines, () => {
-  addGeolocationViaAPI();
-});
+// Start revealing info
+revealLines(infoLines, addGeolocationViaAPI);
