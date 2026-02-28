@@ -56,7 +56,7 @@
   font-size: 1.5rem;
 }
 
-@media (orientation: portrait) {
+@media (orientation: portrait) and (max-width: 812px) and (hover: none) and (pointer: coarse) {
   .rotate-warning {
     display: flex;
   }

@@ -147,13 +147,15 @@ mjx-container[jax="CHTML"] {
   text-align: left;
 }
 
-.ema-formula-group {
+.ema-formula-group, /* DO NOT use this var */
+.half-line-box {
   position: relative;
   padding-left: 40px; /* Space for the bracket */
   margin-left: 20px;
 }
 
-.ema-formula-group::before {
+.ema-formula-group::before, /* DO NOT use this var */
+.half-line-box::before {
   content: '';
   position: absolute;
   left: 0;

@@ -1,15 +1,15 @@
 [
   {
     "title": "[i][S] Home [NEW]",
-    "path": "content/Index/index.html",
+    "path": "content/Home/index.html",
     "children": [
       {
         "title": "[B][S] 1. subcat [NEW]",
-        "path": "content/Index/SubCat/index.html",
+        "path": "content/Home/SubCat/index.html",
         "children": [
           {
             "title": "[B][S] 1.1 subcat [NEW]",
-            "path": "content/Index/SubCat/SubCat2/index.html"
+            "path": "content/Home/SubCat/SubCat2/index.html"
           }
         ]
       }
@@ -202,12 +202,36 @@
     ]
   },
   {
-    "title": "[B][S] Miscellaneous",
+    "title": "[i][S][C] Miscellaneous",
     "path": "content/Miscellaneous/index.html",
     "children": [
       {
         "title": "[B][S] 3D printing",
         "path": "content/Miscellaneous/3D/index.html"
+      },
+      {
+        "title": "[i][S] Cars [NEW]",
+        "path": "content/Miscellaneous/Cars/index.html",
+        "children": [
+          { 
+          "title": "[i][S] Mercedes [NEW]",
+          "path": "content/Miscellaneous/Cars/Mercedes/index.html",
+          "children": [
+            {
+            "title": "[i][S] W211 [NEW]",
+            "path": "content/Miscellaneous/Cars/Mercedes/w211/index.html"
+            },
+            {
+            "title": "[i][S] W204 [NEW]",
+            "path": "content/Miscellaneous/Cars/Mercedes/w204/index.html"
+            },
+            {
+            "title": "[i][S] W208 [NEW]",
+            "path": "content/Miscellaneous/Cars/Mercedes/w208/index.html"
+            }
+           ]
+          }
+        ]
       }
     ]
   }

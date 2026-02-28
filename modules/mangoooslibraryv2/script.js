@@ -105,8 +105,8 @@
 
   // === PUT YOUR IMAGE URLS HERE ===
   const backgrounds = [
-      '/modules/mangoooslibraryv2/Images/WhiteBG.jpg',
       '/modules/mangoooslibraryv2/Images/Black.jpeg',
+      '/modules/mangoooslibraryv2/Images/WhiteBG.jpg',
       '/modules/mangoooslibraryv2/Images/Mountain.jpeg',
       '' // empty string = no background (dark only)
   ];

@@ -37,7 +37,6 @@ git push origin main
 
 # Default html for writing new content:
 --- ##### ----
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,5 +50,27 @@ git push origin main
   </div>
 </body>
 </html>
+--- ##### ----
+
+# how JSON atributes work
 
 --- ##### ----
+             [i] = info icon
+             [-] = Shows ▶
+             [-+] = NOT WORKING
+             [UPDATE] = shows update
+             [S] = space
+             [B] = blank
+    AT END = [NEW] = new info
+             [C] = makes text blue
+
+Correct order: 
+Normal:
+[B][S]
+
+Has info:
+[i][S][C] 
+
+Extra:
+[B] is blank. It was made so that it aligns with [i]. If title has no [i] put a [B] 
+-- ##### ----

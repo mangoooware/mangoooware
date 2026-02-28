@@ -1,0 +1,19 @@
+.red-font {
+  color: red;
+  font-weight: 750
+}
+
+body.inverted .red-font {
+  filter: invert(1) hue-rotate(180deg);
+  color: #ff3131; 
+  font-weight: 750
+}
+
+.subdashmain {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.subdash {
+  margin-left: 10px;
+}
