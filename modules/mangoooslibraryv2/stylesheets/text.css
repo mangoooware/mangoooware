@@ -15,5 +15,10 @@ body.inverted .red-font {
 }
 
 .subdash {
-  margin-left: 10px;
+  margin-left: 20px;
+}
+
+.menulist {
+  margin: 5px;
+  padding-left: 20px;
 }

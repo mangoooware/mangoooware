@@ -52,8 +52,7 @@ git push origin main
 </html>
 --- ##### ----
 
-# how JSON atributes work
-
+# How JSON atributes work
 --- ##### ----
              [i] = info icon
              [-] = Shows ▶
@@ -73,4 +72,19 @@ Has info:
 
 Extra:
 [B] is blank. It was made so that it aligns with [i]. If title has no [i] put a [B] 
+-- ##### ----
+
+# Text styles
+-- ##### ----
+## 1
+<p class="menulist">∙ Lorem </p> 
+<p class="menulist">∙ ipsum  </p> 
+<p class="menulist">∙ dolor </p> <br>
+
+## 2
+<br>
+<div class="subdashmain">- Lorem</div>
+<div class="subdash">- ipsum</div> 
+<div class="subdash">- dolor</div>
+
 -- ##### ----

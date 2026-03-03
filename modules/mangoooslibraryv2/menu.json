@@ -1,19 +1,7 @@
 [
   {
-    "title": "[i][S] Home [NEW]",
-    "path": "content/Home/index.html",
-    "children": [
-      {
-        "title": "[B][S] 1. subcat [NEW]",
-        "path": "content/Home/SubCat/index.html",
-        "children": [
-          {
-            "title": "[B][S] 1.1 subcat [NEW]",
-            "path": "content/Home/SubCat/SubCat2/index.html"
-          }
-        ]
-      }
-    ]
+    "title": "[i][S] Home",
+    "path": "content/Home/index.html"
   },
   {
     "title": "[i][S][C] Finance",
