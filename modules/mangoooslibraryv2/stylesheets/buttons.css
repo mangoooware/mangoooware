@@ -53,7 +53,7 @@
 }
 
 /* Invert colors for everything */
-body.inverted {
+body.inverted #invert-wrapper {
   filter: invert(0.99) hue-rotate(180deg);
 }
 
@@ -63,12 +63,6 @@ body.inverted .custom,
 body.inverted .updatecat,
 body.inverted img,
 body.inverted video {
-  filter: invert(1) hue-rotate(180deg);
-}
-
-/* Keep the buttons normal when inverted */
-body.inverted #color-inverter,
-body.inverted #bg-button {
   filter: invert(1) hue-rotate(180deg);
 }
 
@@ -103,8 +97,18 @@ body.inverted #bg-button {
   transform: translateY(1px);
 }
 
-/* Keep the button normal when inverted */
-body.inverted #updates-button {
-  filter: invert(1) hue-rotate(180deg);
+
+body.inverted #updates-button,
+body.inverted #bg-button,
+body.inverted #color-inverter 
+{
+  background-color: rgba(219, 219, 219, 0.9);
 }
-/* ⇧⇧⇧ update-log button ⇧⇧⇧ */
+
+body.inverted #updates-button:hover,
+body.inverted #bg-button:hover,
+body.inverted #color-inverter:hover 
+{
+  background-color: #6f6f6f;
+  transform: translateY(-3px);
+}

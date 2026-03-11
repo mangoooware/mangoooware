@@ -16,6 +16,9 @@ git push origin main
 # Refer to other page
   <a href="#" data-path="/modules/mangoooslibraryv2/content/.../index.html"></a>
 
+# Word with description box
+<span data-tip="text inside box">word</span>
+
 # Unicodes for sorting
   ∙ 
   ●
@@ -86,5 +89,10 @@ Extra:
 <div class="subdashmain">- Lorem</div>
 <div class="subdash">- ipsum</div> 
 <div class="subdash">- dolor</div>
-
 -- ##### ----
+
+# test JSON
+{
+  "title": "[i][S][C] TEST",
+  "path": "X"
+},

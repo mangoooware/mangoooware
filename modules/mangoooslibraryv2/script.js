@@ -31,6 +31,8 @@
         <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
         <div id="search-results"></div>
       `;
+
+      
       sidebar.appendChild(searchContainer);
       
       // Then append menu tree AFTER the search container
@@ -41,7 +43,13 @@
       buildSearchIndex(data);
       
       // Load active path if exists
-      if (activePath) loadContent(activePath);
+      if (activePath) {
+        loadContent(activePath);
+      } else if (data.length > 0) {
+        const firstPath = data[0].path;
+        loadContent(firstPath);
+        localStorage.setItem('activePath', firstPath);
+      }
       
       // NOW set up sidebar toggle button (after it exists in DOM)
       const sidebarToggle = document.getElementById('sidebar-toggle');
@@ -97,72 +105,125 @@
   // Color Inverter functionality
   // Color Inverter functionality
 
+// Background changer button
+// Background changer button
+// Background changer button
+const bgButton = document.getElementById('bg-button');
+const backgrounds = [
+    '/modules/mangoooslibraryv2/Images/Background/Black.jpeg',
+    '/modules/mangoooslibraryv2/Images/Background/WhiteBG.jpg',
+    '/modules/mangoooslibraryv2/Images/Background/Mountain.jpeg',
+    '/modules/mangoooslibraryv2/Images/Background/horizonorange.jpg',
+    '/modules/mangoooslibraryv2/Images/Background/deathnote1.jpg'
+];
 
-  // Background Changer Button
-  // Background Changer Button
-  // Background Changer Button
-  const bgButton = document.getElementById('bg-button');
+let currentBgIndex = 0;
+let isTransitioning = false;
 
-  // === PUT YOUR IMAGE URLS HERE ===
-  const backgrounds = [
-      '/modules/mangoooslibraryv2/Images/Black.jpeg',
-      '/modules/mangoooslibraryv2/Images/WhiteBG.jpg',
-      '/modules/mangoooslibraryv2/Images/Mountain.jpeg',
-      '' // empty string = no background (dark only)
-  ];
+// Create two background layers that sit behind everything
+const bgLayer1 = document.createElement('div');
+const bgLayer2 = document.createElement('div');
 
-  let currentBgIndex = 0;
+const bgLayerStyle = `
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+`;
 
-  // Load saved background on start
-  const savedBg = localStorage.getItem('backgroundImage');
-  if (savedBg && backgrounds.includes(savedBg)) {
-      document.body.style.backgroundImage = `url('${savedBg}')`;
-      currentBgIndex = backgrounds.indexOf(savedBg);
-  } else {
-      // Default: first image or none
-      document.body.style.backgroundImage = backgrounds[0] ? `url('${backgrounds[0]}')` : 'none';
-      currentBgIndex = 0;
-  }
+bgLayer1.style.cssText = bgLayerStyle;
+bgLayer2.style.cssText = bgLayerStyle;
+bgLayer2.style.opacity = '0';
 
-  // Common background styles
-  function applyBackground(url) {
-      document.body.style.backgroundImage = url ? `url('${url}')` : 'none';
-      document.body.style.backgroundRepeat = 'no-repeat';
-      document.body.style.backgroundAttachment = 'fixed';
-      document.body.style.backgroundPosition = 'center';
-      document.body.style.backgroundSize = 'cover';
-  }
+document.body.appendChild(bgLayer1);
+document.body.appendChild(bgLayer2);
 
-  applyBackground(backgrounds[currentBgIndex] || '');
+// Remove background from body itself
+document.body.style.backgroundImage = 'none';
 
-  bgButton.addEventListener('click', () => {
-      currentBgIndex = (currentBgIndex + 1) % backgrounds.length;
-      const nextBg = backgrounds[currentBgIndex];
-      
-      applyBackground(nextBg);
-      
-      // Save preference
-      localStorage.setItem('backgroundImage', nextBg || '');
-      
-      // Optional: change button emoji to indicate "next"
-      bgButton.textContent = '🖼️';
-      setTimeout(() => { bgButton.textContent = '🖼️'; }, 200); // small feedback
-  });
+function setLayerBackground(layer, url) {
+    layer.style.backgroundImage = url ? `url('${url}')` : 'none';
+    layer.style.backgroundRepeat = 'no-repeat';
+    layer.style.backgroundAttachment = 'fixed';
+    layer.style.backgroundPosition = 'center';
+    layer.style.backgroundSize = 'cover';
+}
 
-  // Update Logs button functionality
-  const updatesButton = document.getElementById('updates-button');
+// Track which layer is currently on top
+let activeLayer = bgLayer1;
+let inactiveLayer = bgLayer2;
 
-  updatesButton.addEventListener('click', () => {
+function applyBackground(url) {
+    isTransitioning = true;
+    bgButton.disabled = true;
+
+    const img = new Image();
+
+img.onload = () => {
+    inactiveLayer.style.zIndex = '-1';
+    activeLayer.style.zIndex = '-2';
+    
+    setLayerBackground(inactiveLayer, url);
+    inactiveLayer.style.transition = 'none';
+    inactiveLayer.style.opacity = '0';
+
+    inactiveLayer.getBoundingClientRect();
+
+    inactiveLayer.style.transition = 'opacity 0.8s ease';
+    inactiveLayer.style.opacity = '1';
+
+    inactiveLayer.addEventListener('transitionend', () => {
+        setLayerBackground(activeLayer, '');
+        activeLayer.style.zIndex = '-2';
+
+        [activeLayer, inactiveLayer] = [inactiveLayer, activeLayer];
+
+        isTransitioning = false;
+        bgButton.disabled = false;
+    }, { once: true });
+};
+
+    img.onerror = () => {
+        setLayerBackground(activeLayer, url);
+        isTransitioning = false;
+        bgButton.disabled = false;
+    };
+
+    img.src = url;
+}
+
+// Load saved background on start
+const savedBg = localStorage.getItem('backgroundImage');
+if (savedBg && backgrounds.includes(savedBg)) {
+    currentBgIndex = backgrounds.indexOf(savedBg);
+} else {
+    currentBgIndex = 0;
+}
+setLayerBackground(bgLayer1, backgrounds[currentBgIndex]);
+
+// Button click
+bgButton.addEventListener('click', () => {
+    if (isTransitioning) return;
+    currentBgIndex = (currentBgIndex + 1) % backgrounds.length;
+    const nextBg = backgrounds[currentBgIndex];
+    applyBackground(nextBg);
+    localStorage.setItem('backgroundImage', nextBg);
+    bgButton.textContent = '🖼️';
+});
+
+// Update Logs button
+const updatesButton = document.getElementById('updates-button');
+updatesButton.addEventListener('click', () => {
     const updatesPath = 'content/Updates/index.html';
     loadContent(updatesPath);
     localStorage.setItem('activePath', updatesPath);
-    
-    // Remove active class from sidebar items
     document.querySelectorAll('.sidebar-item').forEach(el => el.classList.remove('active'));
-  });
-  // Background Changer Button ^^^
-  // Background Changer Button
-  // Background Changer Button
+});
 
 const TITLE_MARKERS = [
   { marker: '[i]', className: 'info', display: 'i' },
@@ -230,6 +291,65 @@ function formatTitle(title) {
   return result + newBadge;
 }
 
+function initTooltips() {
+    document.querySelectorAll('[data-tip]:not([data-tip-ready])').forEach(el => {
+      el.setAttribute('data-tip-ready', 'true');
+
+      const box = document.createElement('div');
+      box.className = 'tooltip-box';
+      box.textContent = el.getAttribute('data-tip');
+
+      const arrow = document.createElement('div');
+      arrow.className = 'tooltip-arrow';
+
+      el.appendChild(box);
+      el.appendChild(arrow);
+
+      el.addEventListener('mouseenter', () => {
+        if (!el.classList.contains('pinned')) {
+          box.classList.add('visible');
+          arrow.classList.add('visible');
+        }
+      });
+
+      el.addEventListener('mouseleave', (e) => {
+        if (!el.classList.contains('pinned') && !box.contains(e.relatedTarget)) {
+          box.classList.remove('visible');
+          arrow.classList.remove('visible');
+        }
+      });
+    });
+  }
+
+// Click to pin / unpin
+  document.addEventListener('click', function(e) {
+    // Clicking inside tooltip box — allow text selection, do nothing
+    if (e.target.closest('.tooltip-box')) return;
+
+    const tip = e.target.closest('[data-tip]');
+
+    if (tip) {
+      const wasPinned = tip.classList.contains('pinned');
+      document.querySelectorAll('[data-tip].pinned').forEach(el => {
+        el.classList.remove('pinned');
+        el.querySelector('.tooltip-box').classList.remove('visible');
+        el.querySelector('.tooltip-arrow').classList.remove('visible');
+      });
+      if (!wasPinned) {
+        tip.classList.add('pinned');
+        tip.querySelector('.tooltip-box').classList.add('visible');
+        tip.querySelector('.tooltip-arrow').classList.add('visible');
+      }
+    } else {
+      document.querySelectorAll('[data-tip].pinned').forEach(el => {
+        el.classList.remove('pinned');
+        el.querySelector('.tooltip-box').classList.remove('visible');
+        el.querySelector('.tooltip-arrow').classList.remove('visible');
+      });
+    }
+  });
+
+  // Single, consolidated loadContent function
   function isParent(parent, child) {
     return child && child.startsWith(parent + '/'); // Improved: avoids false matches
   }
@@ -240,6 +360,7 @@ function formatTitle(title) {
       .then(res => res.text())
       .then(html => {
         content.innerHTML = html;
+        initTooltips();
 
         // Render MathJax
         if (window.MathJax) {
@@ -360,20 +481,24 @@ function formatTitle(title) {
     });
   }
 
-  async function fetchPageContent(path) {
-    try {
-      const response = await fetch(path);
-      const html = await response.text();
-      const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = html;
-      const scripts = tempDiv.querySelectorAll('script, style');
-      scripts.forEach(script => script.remove());
-      return tempDiv.textContent || tempDiv.innerText || '';
-    } catch (err) {
-      console.error('Error fetching content:', err);
-      return '';
-    }
+const pageContentCache = {};
+
+async function fetchPageContent(path) {
+  if (pageContentCache[path]) return pageContentCache[path];
+  try {
+    const response = await fetch(path);
+    const html = await response.text();
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = html;
+    tempDiv.querySelectorAll('script, style').forEach(el => el.remove());
+    const text = tempDiv.textContent || tempDiv.innerText || '';
+    pageContentCache[path] = text;
+    return text;
+  } catch (err) {
+    console.error('Error fetching content:', err);
+    return '';
   }
+}
 
   async function performSearch(query) {
     const searchResults = document.getElementById('search-results');

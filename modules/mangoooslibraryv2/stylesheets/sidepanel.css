@@ -94,20 +94,6 @@ main.expanded {
   margin-left: 0;
 }
 
-.page {
-    max-width: 3000px;
-    padding: 40px;
-    background-color: rgba(27, 27, 27, 0.9);
-    border-radius: 25px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-
-    /* Smooth roll-down animation setup */
-    overflow: hidden;                    /* Hide overflowing text initially */
-    max-height: 0;                       /* Start collapsed */
-    animation: expand 3s ease-out forwards; /* Adjust duration as needed */
-    position: relative;
-}
-
 /* Expand animation - text rolls down smoothly */
 @keyframes expand {
     0% {
@@ -254,28 +240,34 @@ aside {
 }
 
 .search-result-title {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: #ffffff;
   margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  display: block; 
+  line-height: 1.5;     
 }
 
 .search-result-preview {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.65);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
   line-height: 1.5;
-  margin-left: 28px;             /* Indent under title */
+  margin-left: 0;        /* REMOVE indent — causes awkward alignment */
+  word-break: break-word; /* ADD — stops long paths from overflowing */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* ADD — max 3 lines of preview */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .search-highlight {
   background-color: #007bff;
   color: white;
-  padding: 2px 6px;
-  border-radius: 5px;
+  padding: 1px 5px;
+  border-radius: 4px;
   font-weight: bold;
+  display: inline;       /* ADD — keeps it from acting as block */
+  vertical-align: baseline; /* ADD — stops it from shifting text up/down */
 }
 
 .no-results {

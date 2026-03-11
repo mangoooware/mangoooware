@@ -22,3 +22,58 @@ body.inverted .red-font {
   margin: 5px;
   padding-left: 20px;
 }
+
+[data-tip] {
+  border-bottom: 1.5px dotted rgba(255, 255, 255, 0.6);
+  cursor: help;
+  position: relative;
+  display: inline;
+}
+
+.tooltip-box {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background-color: rgba(30, 30, 30, 0.97);
+  color: #f0f0f0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  width: max-content;  
+  max-width: 220px;
+  white-space: normal;
+  word-wrap: break-word;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 9999;
+  pointer-events: none;  /* default off */
+  user-select: text;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: rgba(30, 30, 30, 0.97);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.tooltip-box.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: all;  /* enable interaction when visible */
+}
+
+.tooltip-arrow.visible {
+  opacity: 1;
+}

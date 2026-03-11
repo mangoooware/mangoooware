@@ -122,6 +122,28 @@
       {
         "title": "[B][S] Economics",
         "path": "content/Finance/Economics/index.html"
+      },
+      {
+        "title": "[i][S][C] Finance Tools",
+        "path": "content/Finance/Tools/index.html",
+        "children": [
+          {
+            "title": "[i][S][C] EViews",
+            "path": "content/Finance/Tools/EViews/index.html"
+          },
+          {
+            "title": "[i][S][C] MATLAB",
+            "path": "content/Finance/Tools/MATLAB/index.html"
+          },
+          {
+            "title": "[i][S][C] Origin",
+            "path": "content/Finance/Tools/Origin/index.html"
+          },
+          {
+            "title": "[i][S][C] Stata",
+            "path": "content/Finance/Tools/Stata/index.html"
+          }
+        ]
       }
     ]
   },
