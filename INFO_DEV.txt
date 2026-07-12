@@ -96,3 +96,6 @@ Extra:
   "title": "[i][S][C] TEST",
   "path": "X"
 },
+
+# Text window explanation on highlighted word
+<span data-tip=""></span>

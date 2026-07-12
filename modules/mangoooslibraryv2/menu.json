@@ -203,7 +203,13 @@
     "children": [
       {
         "title": "[B][S] Biology",
-        "path": "content/Science/Biology/index.html"
+        "path": "content/Science/Biology/index.html",
+        "children": [
+          {
+            "title": "[B][S] Cell Biology",
+            "path": "content/Science/Biology/Cell Biology/index.html"
+          }
+        ]
       },
       {
         "title": "[B][S] Chemistry",
