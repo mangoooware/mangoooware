@@ -61,8 +61,8 @@ git push origin main
              [-] = Shows ▶
              [-+] = NOT WORKING
              [UPDATE] = shows update
-             [S] = space
-             [B] = blank
+             [S] = space with stripe ( |)
+             [B] = space ( )
     AT END = [NEW] = new info
              [C] = makes text blue
 

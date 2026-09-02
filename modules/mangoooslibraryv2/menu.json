@@ -198,16 +198,16 @@
 
 
   {
-    "title": "[B][S] Science",
+    "title": "[i][S][C] Science",
     "path": "content/Science/index.html",
     "children": [
       {
-        "title": "[B][S] Biology",
+        "title": "[i][S][C] Biology",
         "path": "content/Science/Biology/index.html",
         "children": [
           {
-            "title": "[B][S] Cell Biology",
-            "path": "content/Science/Biology/Cell Biology/index.html"
+            "title": "[i][S][C] Cell Biology",
+            "path": "content/Science/Biology/Cell biology/index.html"
           }
         ]
       },
@@ -226,23 +226,23 @@
         "path": "content/Miscellaneous/3D/index.html"
       },
       {
-        "title": "[i][S] Cars [NEW]",
+        "title": "[i][S][C] Cars",
         "path": "content/Miscellaneous/Cars/index.html",
         "children": [
           { 
-          "title": "[i][S] Mercedes [NEW]",
+          "title": "[i][S][C] Mercedes",
           "path": "content/Miscellaneous/Cars/Mercedes/index.html",
           "children": [
             {
-            "title": "[i][S] W211 [NEW]",
+            "title": "[i][S][C] W211",
             "path": "content/Miscellaneous/Cars/Mercedes/w211/index.html"
             },
             {
-            "title": "[i][S] W204 [NEW]",
+            "title": "[i][S][C] W204",
             "path": "content/Miscellaneous/Cars/Mercedes/w204/index.html"
             },
             {
-            "title": "[i][S] W208 [NEW]",
+            "title": "[i][S][C] W208",
             "path": "content/Miscellaneous/Cars/Mercedes/w208/index.html"
             }
            ]
